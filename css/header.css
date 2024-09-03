@@ -1,0 +1,182 @@
+/* Componente: Header (Encabezado del sitio) */
+header {
+  position: fixed;
+  width: 100%; /* El header ocupa todo el ancho */
+  top: 0;
+  left: 0;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.603
+  ); /* Color blanco translúcido con baja opacidad */
+  display: flex;
+  justify-content: center; /* Centrar el contenido del nav */
+  align-items: center;
+  z-index: 1000;
+  height: 60px; /* Altura estándar del header */
+  backdrop-filter: blur(10px) saturate(180%); /* Desenfoque y saturación para el efecto de vidrio */
+  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Soporte para Safari */
+  border-radius: 0 0 15px 15px; /* Bordes redondeados para el biselado en la parte inferior */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para darle un aspecto elevado */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Borde suave alrededor del header */
+}
+
+/* Componente: Logo */
+.logo {
+  position: relative; /* Permite ajustar la posición */
+  margin-right: 80px; /* Mueve el logo más a la izquierda */
+  margin-top: 22px; /* Mueve el logo hacia abajo */
+  display: flex; /* Para alinear el logo y el texto del logo juntos */
+  align-items: center; /* Alinea el logo y el texto verticalmente */
+  z-index: 2000;
+}
+
+.logo img {
+  height: 80px; /* Altura del logo en 80px */
+}
+
+/* Nombre de la compañía */
+.company-name {
+  margin-left: 15px; /* Espacio a la izquierda del logo */
+  font-size: 28px; /* Tamaño de fuente para el nombre de la compañía */
+  font-weight: bold; /* Fuente en negrita */
+  color: #000000; /* Color del texto negro */
+}
+
+/* Componente: Navbar (Menú de navegación) */
+.navbar {
+  display: flex; /* Uso de Flexbox para alinear los elementos del menú */
+  align-items: center; /* Alineación vertical */
+  margin-top: 20px;
+}
+
+.navbar ul {
+  list-style-type: none; /* Elimina los puntos de las listas */
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 10px; /* Padding de 10px alrededor del menú */
+  display: flex; /* Uso de Flexbox para alinear los elementos en fila */
+}
+
+.navbar ul li {
+  margin-right: 20px; /* Espacio entre los elementos del menú (20px) */
+}
+
+.navbar ul li a {
+  color: #000; /* Color de texto negro para los enlaces */
+  text-decoration: none; /* Elimina el subrayado en los enlaces */
+  font-weight: bold; /* Texto en negrita */
+  padding: 10px 15px; /* Padding de 10px arriba/abajo y 15px izquierda/derecha */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
+  border-radius: 5px; /* Bordes redondeados en 5px */
+}
+
+/* Estilo cuando se pasa el cursor sobre los enlaces */
+.navbar ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.685); /* Cambia el fondo a negro */
+  color: #fff; /* Cambia el texto a blanco */
+}
+
+/* Estilos para los enlaces activos o enfocados */
+.navbar ul li a:focus,
+.navbar ul li a:active {
+  background-color: #333; /* Fondo gris oscuro */
+  color: #fff; /* Texto blanco */
+  transform: scale(0.95); /* Escala ligeramente el tamaño al hacer clic */
+  transition: transform 0.2s ease; /* Transición de la escala */
+}
+
+/* Ocultar inicialmente el header */
+.hidden {
+  opacity: 0; /* Totalmente transparente */
+  visibility: hidden; /* Oculto */
+  transition: opacity 1s ease-in-out, visibility 0s 1s; /* Transición suave */
+}
+
+/* Mostrar el header después de añadir la clase */
+.delayed-appearance {
+  opacity: 1; /* Totalmente visible */
+  visibility: visible; /* Mostrar */
+  transition: opacity 1s ease-in-out; /* Transición suave en opacidad */
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  /* Ajustes para el header */
+  header {
+    justify-content: space-between; /* Espacia el logo y el menú hamburguesa */
+  }
+
+  /* Ajustes para el logo */
+  .logo {
+    margin-right: 0; /* Elimina el margen grande del logo */
+    margin-top: 20px; /* Elimina el margen superior */
+    padding-left: 0; /* Alinea el logo a la izquierda */
+    flex: 1; /* Ocupa todo el espacio disponible */
+  }
+
+  .logo img {
+    height: 50px; /* Ajustar el tamaño del logo en pantallas pequeñas */
+    padding-left: 20px;
+  }
+
+  .company-name {
+    font-size: 16px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+    white-space: nowrap; /* Evita que el texto del nombre se divida en varias líneas */
+  }
+
+  /* Efecto para el menú hamburguesa */
+  .menu-icon {
+    display: flex;
+    margin-left: auto; /* Alinea el menú a la derecha */
+    margin-right: 30px; /* Añade espacio entre el icono y el borde */
+    font-size: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    color: #000000; /* Color inicial */
+  }
+
+  .menu-icon:hover {
+    color: #fcfbfb; /* Cambia el color cuando el cursor está encima */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+  }
+
+  /* Ajustes para el menú desplegable */
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    position: absolute;
+    top: 60px;
+    left: -100%; /* Oculta el menú fuera de la pantalla inicialmente */
+    width: 100%; /* El menú ocupa todo el ancho */
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+    transition: left 0.5s ease; /* Transición suave para el deslizamiento */
+  }
+
+  .navbar ul.show {
+    left: 0; /* Muestra el menú cuando está activo */
+  }
+
+  .navbar ul li {
+    text-align: center; /* Centrar el texto de los enlaces */
+    margin: 8px 0; /* Espaciado entre los enlaces */
+  }
+
+  .navbar ul li a {
+    color: white; /* Color del texto */
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+  }
+
+  .navbar ul li a:hover {
+    background-color: #ffffffd0; /* Cambia el fondo en hover */
+    color: black; /* Cambia el color del texto */
+  }
+}

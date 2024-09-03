@@ -1,0 +1,76 @@
+/* Componente: Footer (Pie de página) */
+footer {
+  background-color: rgba(51, 51, 51, 0.5); /* Fondo oscuro translúcido */
+  color: #fff; /* Texto blanco */
+  padding: 5px 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1000;
+  backdrop-filter: blur(10px) saturate(180%); /* Efecto de vidrio con desenfoque y saturación */
+  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Soporte para Safari */
+  border-radius: 15px 15px 0 0; /* Bordes redondeados en la parte superior */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para darle un aspecto elevado */
+  border: 1px solid rgba(255, 255, 255, 0.18); /* Borde suave para el efecto de vidrio */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estructura del contenido del pie de página */
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 10px;
+}
+
+/* Estilo general para los iconos sociales */
+.social-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  fill: white;
+  color: white;
+  margin-right: 15px;
+  transition: fill 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover .social-icon {
+  fill: #606361;
+  color: #606361;
+}
+
+svg.social-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Componente: Sección de iconos sociales */
+.footer-section.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+/* Texto de derechos de autor dentro del pie de página */
+.footer-copy {
+  margin-top: 7px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Ajustes responsivos para pantallas pequeñas (móviles) */
+@media only screen and (max-width: 768px) {
+  .footer-section.social-icons {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-copy {
+    margin-top: 7px;
+    font-size: 8px;
+    color: #fff;
+  }
+}

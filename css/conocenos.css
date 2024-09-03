@@ -1,0 +1,229 @@
+/* Contenedor Parallax */
+.parallax-container {
+  position: relative;
+  min-height: 100vh; /* Ocupa el 100% de la altura de la ventana */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  background-color: #000000;
+  background-image: url("../assets/conocenos.png");
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 100px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Contenedor de múltiples tarjetas alineadas */
+.conocenos-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
+  justify-content: space-between; /* Distribuye las tarjetas con espacio entre ellas */
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho máximo */
+  margin: 0 auto; /* Centra el contenido en pantallas grandes */
+  gap: 20px; /* Espacio entre las tarjetas */
+  margin-top: 80px;
+}
+
+/* Estilo para las tarjetas */
+.conocenos-content {
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo dorado translúcido */
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6); /* Efecto biselado */
+  backdrop-filter: blur(10px); /* Añadir desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  width: calc(
+    50% - 20px
+  ); /* Calcula el ancho para que quepan 2 tarjetas con un espacio de 20px entre ellas */
+  min-height: 520px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* Estilo de la tarjeta grande (CEO) */
+.center-section {
+  width: 100%; /* Tarjeta grande ocupa todo el ancho */
+  max-width: 1200px;
+  min-height: 370px;
+  display: flex;
+  flex-direction: row; /* El contenido fluye en fila */
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo dorado translúcido */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 0 15px rgba(0, 0, 0, 0.6); /* Efecto biselado */
+  backdrop-filter: blur(10px); /* Añadir desenfoque */
+  -webkit-backdrop-filter: blur(10px); /* Soporte para Safari */
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+/* Ajustes para la imagen de la CEO */
+.photo-section {
+  flex: 1; /* Ocupa 1 parte del espacio */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ceo-photo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Texto debajo de la foto */
+.photo-section h1,
+.photo-section h2 {
+  color: #ffffff;
+  text-align: center;
+}
+
+.photo-section h1 {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+.photo-section h2 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+/* Estilo del párrafo en la tarjeta grande */
+.text-section {
+  flex: 2; /* Ocupa 2 partes del espacio */
+  text-align: justify;
+}
+
+.text-section p {
+  font-size: 18px;
+  color: #ffffff;
+  margin: 0 20px;
+  line-height: 1.8;
+}
+
+/* Botón "Leer más" centrado */
+.read-more-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  display: none; /* Oculto por defecto en pantallas grandes */
+  margin-left: auto;
+  margin-right: auto; /* Centra el botón horizontalmente */
+  text-align: center;
+  display: block; /* Asegura que el botón sea de tipo bloque */
+}
+
+.read-more-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Efecto hover transparente */
+  border-color: #f3f3f0; /* Cambia el color del borde al hover */
+}
+
+.read-more-btn:active {
+  background-color: rgba(0, 0, 0, 0.7); /* Efecto al presionar */
+  border-color: #ffffff;
+}
+
+/* Animación de títulos */
+.set-title-animation {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Animación de párrafos */
+.set-paragraph-animation {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: justify;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+  .conocenos-row {
+    flex-direction: column; /* Tarjetas en columna en pantallas pequeñas */
+    width: 100%;
+    padding: 0 5%; /* Margen del 5% en ambos lados de la pantalla */
+    box-sizing: border-box; /* Asegura que el padding no afecte al tamaño total */
+  }
+
+  .conocenos-content {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    min-height: 0;
+    font-size: 15px;
+    padding: 10px; /* Espacio interno dentro de las tarjetas */
+    margin-bottom: 10px; /* Espacio entre las tarjetas */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+
+  .center-section {
+    flex-direction: column;
+    text-align: center;
+    min-height: 0;
+    font-size: 15px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    width: 90%;
+    padding: 10px;
+  }
+
+  .photo-section {
+    margin-bottom: 20px;
+  }
+
+  /* Mostrar el botón Leer Más en pantallas pequeñas */
+  .read-more-btn {
+    display: block; /* Botón aparece en pantallas pequeñas */
+  }
+
+  /* Mostrar solo el texto corto por defecto en pantallas pequeñas */
+  .text-short {
+    display: block;
+  }
+
+  /* Ocultar el texto completo por defecto en pantallas pequeñas */
+  .text-full {
+    display: none;
+  }
+}
+
+/* Adaptaciones para pantallas grandes */
+@media (min-width: 769px) {
+  /* Mostrar el texto completo en pantallas grandes */
+  .text-full {
+    display: block;
+  }
+
+  /* Ocultar el botón Leer Más en pantallas grandes */
+  .read-more-btn {
+    display: none;
+  }
+
+  /* Ocultar el texto corto en pantallas grandes */
+  .text-short {
+    display: none;
+  }
+}

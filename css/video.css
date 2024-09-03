@@ -1,0 +1,142 @@
+/* Estilo para el contenedor del video */
+.video {
+  position: relative; /* Cambiar de fixed a relative para que no bloquee el scroll */
+  width: 100%;
+  height: auto; /* Asegura que el video ocupe su espacio pero permita el scroll del body */
+  background-color: #000;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Video para pantallas pequeñas (vertical) */
+.small-screen-video {
+  display: none; /* Ocultar por defecto en pantallas grandes */
+}
+
+/* Cambiar a video vertical en pantallas pequeñas */
+@media (max-width: 768px) {
+  /* Ocultar video horizontal en pantallas pequeñas */
+  .video {
+    display: none;
+  }
+
+  /* Mostrar video vertical en pantallas pequeñas */
+  .small-screen-video {
+    display: block;
+    width: 100vw;
+    height: 100vh; /* Asegura que el video ocupe toda la pantalla */
+    object-fit: cover; /* Mantiene el video ajustado correctamente */
+  }
+}
+
+/* Contenedor de los eslóganes, centrado en el video */
+
+.slogan-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2; /* Encima del video */
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 80%; /* Aumenta el ancho del contenedor para caber más texto en una línea */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  display: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos generales para los eslóganes */
+
+.slogan {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s ease-in-out;
+  width: 100%; /* Para asegurarse de que el texto esté centrado */
+  display: flex;
+  justify-content: center;
+}
+
+/* Ajuste de tamaño de los eslóganes en pantallas pequeñas */
+@media (max-width: 768px) {
+  .slogan-container {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    z-index: 2; /* Encima del video */
+    color: rgb(240, 237, 237);
+    font-size: 90px;
+    font-weight: bold;
+    width: 80%; /* Aumenta el ancho del contenedor para caber más texto en una línea */
+    display: none;
+  }
+  .slogan {
+    font-size: 80px; /* Disminuye el tamaño en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .slogan-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(
+      -50%
+    ); /* Asegura que el contenedor esté centrado horizontalmente */
+    text-align: left; /* El texto comienza desde el lado izquierdo */
+    z-index: 2; /* Encima del video */
+    color: #e9c913;
+    font-size: 70px;
+    font-weight: bold;
+    width: 80%; /* Ocupa todo el ancho de la pantalla */
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
+    display: none; /* Asegura que el contenedor sea visible */
+  }
+
+  .slogan {
+    font-size: 60px; /* Mantener el tamaño de la fuente grande */
+    margin: 0; /* Eliminar márgenes por defecto */
+    padding: 0 10px; /* Agrega un pequeño padding para que no toque los bordes de la pantalla */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    width: 90%; /* El texto ocupará todo el ancho */
+  }
+}
+
+/* Animaciones individuales para cada eslogan */
+.slogan-1 {
+  animation: fadeInOut 18s ease-in-out infinite;
+}
+
+.slogan-2 {
+  animation: fadeInOut 18s ease-in-out infinite;
+  animation-delay: 6s; /* Se retrasa para aparecer después del primer eslogan */
+}
+
+.slogan-3 {
+  animation: fadeInOut 18s ease-in-out infinite;
+  animation-delay: 12s; /* Se retrasa para aparecer después del segundo eslogan */
+}
+
+/* Animaciones de eslóganes */
+
+/* Eslogan 1, 2 y 3: Fade in y out */
+@keyframes fadeInOut {
+  0%,
+  50%,
+  100% {
+    opacity: 0; /* Oculto al inicio y final del ciclo */
+  }
+  5%,
+  15% {
+    opacity: 1; /* Visible entre el 5% y el 45% del ciclo */
+  }
+}

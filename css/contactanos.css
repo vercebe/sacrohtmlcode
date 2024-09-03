@@ -1,0 +1,123 @@
+/* Sección Contactanos */
+.contact-section {
+  background-color: #1a1a1a; /* Fondo oscuro */
+  color: #ffffff; /* Texto en blanco */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Estilos del formulario */
+.contact-form {
+  background-color: #333333; /* Fondo del formulario */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 40px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  background-color: #1a1a1a; /* Fondo de los campos */
+  color: #ffffff; /* Texto en los campos */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #aaaaaa; /* Color del placeholder */
+}
+
+.contact-form .btn-submit {
+  background-color: #d3c016; /* Color del botón */
+  color: #1a1a1a; /* Color del texto del botón */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.contact-form .btn-submit:hover {
+  background-color: #ffffff; /* Efecto hover del botón */
+  color: #1a1a1a; /* Texto del botón en hover */
+}
+
+/* Estilos de la información de las ubicaciones */
+.location-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.location {
+  background-color: #333333; /* Fondo de las cajas de ubicación */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  min-width: 300px;
+}
+
+.location h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.location p {
+  margin-bottom: 15px;
+}
+
+.location .btn-map {
+  background-color: #d3c016; /* Color del botón */
+  color: #1a1a1a; /* Color del texto del botón */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.location .btn-map:hover {
+  background-color: #ffffff; /* Efecto hover del botón */
+  color: #1a1a1a; /* Texto del botón en hover */
+}
+
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+  .location-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}

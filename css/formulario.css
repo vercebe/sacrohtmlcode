@@ -1,0 +1,179 @@
+/* Componente: Main (Contenido principal) */
+main {
+  margin-top: 80px; /* Margen superior de 80px para evitar el header */
+  padding: 20px; /* Padding interno de 20px */
+}
+
+/* Secciones dentro de Main */
+section {
+  margin-bottom: 40px; /* Espacio inferior de 40px */
+  background-color: #f8f8f8; /* Fondo gris claro */
+  border-radius: 10px; /* Bordes redondeados de 10px */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+/* Componente: Formulario emergente */
+.form-popup {
+  position: fixed; /* Fijado en la pantalla */
+  top: 0; /* Alineado en la parte superior */
+  left: 0; /* Alineado en el borde izquierdo */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+  display: flex; /* Uso de Flexbox para centrar el formulario */
+  justify-content: center; /* Centra horizontalmente el formulario */
+  align-items: center; /* Centra verticalmente el formulario */
+  z-index: 1001; /* Aparece por encima del contenido de la página */
+  overflow: auto; /* Desplazamiento si el contenido es más alto que la pantalla */
+}
+
+.form-container {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.664
+  ); /* Fondo gris claro translúcido */
+  padding: 20px; /* Padding alrededor del formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  width: 80%; /* Ancho del 80% del contenedor */
+  max-width: 360px; /* Ancho máximo de 360px */
+  max-height: 90%; /* Altura máxima del 90% de la pantalla */
+  color: #000; /* Texto negro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Sombra externa suave */ inset 0 1px 2px rgba(255, 255, 255, 0.8),
+    /* Sombra interna para el biselado */ inset 0 -1px 3px rgba(0, 0, 0, 0.4); /* Sombra interna más oscura para mayor profundidad */
+  position: relative; /* Posición relativa para ajuste en el contenedor */
+  overflow-y: auto; /* Scroll vertical si es necesario */
+  backdrop-filter: blur(
+    15px
+  ); /* Desenfoque de 15px en navegadores compatibles */
+  -webkit-backdrop-filter: blur(15px); /* Desenfoque de 15px para Safari */
+}
+
+.form-container form {
+  display: flex; /* Flexbox para organizar el formulario */
+  flex-direction: column; /* Organización en columna */
+  justify-content: center; /* Centra verticalmente los elementos */
+  align-items: center; /* Centra horizontalmente los elementos */
+}
+
+input,
+select {
+  text-align: center; /* Centrar el texto dentro del campo de entrada */
+}
+select::placeholder,
+input::placeholder {
+  text-align: center; /* Centrar el texto del placeholder */
+}
+
+.close-btn {
+  position: absolute; /* Botón de cierre en posición absoluta */
+  top: 5px; /* Alineado 5px desde la parte superior */
+  right: 5px; /* Alineado 5px desde la derecha */
+  font-size: 24px; /* Tamaño de la "X" en 24px */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  font-weight: bold;
+}
+
+/* Título del formulario */
+h2 {
+  text-align: center; /* Texto centrado */
+  margin-bottom: 20px; /* Espacio inferior de 20px */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Grupos de entrada del formulario */
+.form-group {
+  width: 100%; /* Ancho completo */
+  margin-bottom: 10px; /* Espacio inferior de 10px */
+}
+
+.form-group label {
+  display: none; /* Alinea el texto del label */
+  margin-bottom: 2px; /* Espacio inferior de 2px */
+  text-align: center; /* Texto centrado */
+  font-weight: bold;
+}
+
+.form-group input,
+select {
+  width: 100%; /* Ancho completo del input */
+  padding: 10px; /* Padding interno de 10px */
+  font-size: 16px; /* Tamaño de fuente 16px */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 5px; /* Bordes redondeados en 5px */
+  box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+  margin-top: 8px;
+}
+
+/* Botón de envío del formulario */
+.btn {
+  display: block; /* Botón en bloque */
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde */
+  padding: 15px; /* Padding interno de 15px */
+  width: 50%; /* Ancho del 50% del contenedor */
+  border-radius: 5px; /* Bordes redondeados de 5px */
+  font-weight: bold; /* Texto en negrita */
+  text-align: center; /* Texto centrado */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  margin: 20px auto 0 auto; /* Centra el botón horizontalmente */
+}
+
+/* Efecto hover en el botón */
+.btn:hover {
+  background-color: #333; /* Fondo gris oscuro al pasar el ratón */
+}
+
+/* Animación de carga y mensaje de éxito */
+#loading-animation,
+#success-message {
+  display: none; /* Inicialmente ocultos */
+  position: fixed; /* Fijados en el centro de la pantalla */
+  top: 50%; /* Centrado verticalmente */
+  left: 50%; /* Centrado horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición para estar centrado */
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con transparencia */
+  color: #fff; /* Texto blanco */
+  padding: 20px; /* Padding interno de 20px */
+  border-radius: 10px; /* Bordes redondeados en 10px */
+  z-index: 1002; /* Aparece por encima de otros elementos */
+  font-size: 18px; /* Tamaño del texto 18px */
+  text-align: center; /* Texto centrado */
+}
+
+.dots {
+  display: inline-block; /* Muestra los puntos en línea */
+  margin-left: 5px; /* Espacio a la izquierda de 5px */
+}
+
+.dots span {
+  animation: blink 1s infinite steps(1); /* Animación de parpadeo continuo */
+}
+
+.dots span:nth-child(2) {
+  animation-delay: 0.2s; /* Retraso de 0.2s para el segundo punto */
+}
+
+.dots span:nth-child(3) {
+  animation-delay: 0.3s; /* Retraso de 0.3s para el tercer punto */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0; /* El punto desaparece */
+  }
+  50% {
+    opacity: 1; /* El punto aparece */
+  }
+  100% {
+    opacity: 0; /* El punto desaparece */
+  }
+}
+
+#success-message {
+  opacity: 1; /* Mensaje de éxito totalmente visible */
+  transition: opacity 1s ease-out; /* Transición suave para desaparecer */
+}

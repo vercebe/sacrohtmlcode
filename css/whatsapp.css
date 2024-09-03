@@ -1,0 +1,108 @@
+/* Estilos para la pestaña de WhatsApp */
+.whatsapp-tab {
+  position: fixed; /* Fijada en la pantalla */
+  bottom: 65px; /* Alineada a 65px desde la parte inferior */
+  right: 0; /* Alineada al borde derecho */
+  width: 60px; /* Ancho inicial de la pestaña */
+  height: 60px; /* Altura inicial de la pestaña */
+  background-color: rgba(37, 211, 101, 0.658); /* Color verde de WhatsApp */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en las esquinas superiores */
+  backdrop-filter: blur(5px); /* Aplica un efecto de desenfoque al fondo */
+  -webkit-backdrop-filter: blur(
+    5px
+  ); /* Para Safari y navegadores que usan WebKit */
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.6),
+    /* Sombra interna para efecto biselado */ 0 4px 6px rgba(0, 0, 0, 0.4); /* Sombra externa */
+  cursor: pointer; /* Cambia el cursor a puntero */
+  display: flex; /* Flexbox para alinear el contenido */
+  align-items: center; /* Alineación vertical del contenido */
+  justify-content: flex-start; /* El contenido se alinea a la izquierda */
+  z-index: 1002; /* Aparece por encima de otros elementos */
+  transition: width 0.5s ease, height 0.5s ease; /* Transición suave en cambios de tamaño */
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  padding-left: 10px; /* Espacio a la izquierda de 10px */
+  animation: bounceInLeft 1s ease; /* Animación de rebote desde la derecha */
+}
+
+/* Contenido del WhatsApp */
+.whatsapp-content {
+  display: flex; /* Flexbox para organizar el contenido */
+  align-items: center; /* Alineación vertical */
+  justify-content: center; /* Alineación horizontal */
+  width: 100%; /* Ocupa el ancho completo */
+  height: 100%; /* Ocupa la altura completa */
+  padding-left: 10px; /* Padding de 10px a la izquierda */
+  overflow: hidden; /* Oculta el desbordamiento */
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
+}
+
+.whatsapp-icon {
+  color: white; /* Ícono de WhatsApp en blanco */
+  font-size: 50px; /* Tamaño del ícono */
+  margin-right: 15px; /* Espacio a la derecha del ícono */
+  flex-shrink: 0; /* Evita que el ícono se reduzca */
+}
+
+.whatsapp-text-content {
+  color: #ffffff; /* Texto blanco */
+  font-size: 14px; /* Tamaño del texto 14px */
+  text-align: center; /* Texto centrado horizontalmente */
+  display: flex; /* Flexbox para organizar el texto */
+  flex-direction: column; /* Organización vertical */
+  justify-content: center; /* Centra verticalmente el texto */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta el desbordamiento */
+  text-overflow: ellipsis; /* Muestra "..." si el texto es muy largo */
+  margin-top: 7px;
+}
+
+/* Efecto hover en la pestaña de WhatsApp */
+.whatsapp-tab:hover {
+  width: 200px; /* Aumenta el ancho a 200px al pasar el ratón */
+  height: 100px; /* Aumenta la altura a 100px al pasar el ratón */
+  border-radius: 10px 10px 0 0; /* Mantiene los bordes redondeados superiores */
+}
+
+/* Estilo del texto dentro del WhatsApp */
+.whatsapp-text-content p {
+  margin: 5px; /* Margen de 5px alrededor del texto */
+  line-height: 1.2; /* Espaciado entre líneas de texto */
+  font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo del enlace */
+.whatsapp-link {
+  color: #ffffff; /* Texto blanco */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold; /* Texto en negrita */
+  display: inline-block; /* Muestra el botón en línea */
+  background-color: #25d366; /* Color de fondo verde */
+  padding: 5px 10px; /* Padding interno: 5px arriba/abajo, 10px izquierda/derecha */
+  border-radius: 5px; /* Bordes redondeados de 5px */
+  transition: background-color 0.3s ease; /* Transición suave en hover */
+}
+
+/* Efecto hover en el enlace */
+.whatsapp-link:hover {
+  background-color: #fafafa; /* Fondo más claro al pasar el ratón */
+  text-decoration: none; /* Asegura que no aparezca subrayado */
+  color: #25d366;
+}
+
+/* Animación de rebote (bounceInLeft) para la pestaña de WhatsApp */
+@keyframes bounceInLeft {
+  0% {
+    transform: translateX(
+      100%
+    ); /* Inicia fuera de la pantalla desde la derecha */
+  }
+  60% {
+    transform: translateX(-30px); /* Rebota hacia adentro */
+  }
+  80% {
+    transform: translateX(10px); /* Rebota hacia atrás */
+  }
+  100% {
+    transform: translateX(0); /* Se posiciona en su lugar final */
+  }
+}
