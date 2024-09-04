@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,17 +22,17 @@
     <!-- Componente: Encabezado con logo y menú de navegación -->
     <header class="hidden">
       <div class="logo">
-        <img src="assets/logo.svg" alt="Logo Sacro Construction Group" />
+        <img src="assets/logo.svg" alt="Sacro Construction Group Logo" />
         <div class="company-name">Sacro Construction Group</div>
       </div>
       <nav class="navbar">
         <div class="menu-icon" id="menu-icon"><i class="fas fa-bars"></i></div>
         <ul id="nav-links">
           <li><a href="#" id="home-link">Home</a></li>
-          <li><a href="#Conocenos">Conócenos</a></li>
-          <li><a href="#Servicios">Servicios</a></li>
-          <li><a href="#section4">Portafolio</a></li>
-          <li><a href="#Contactanos">Contactanos</a></li>
+          <li><a href="#Conocenos">About Us</a></li>
+          <li><a href="#Servicios">Services</a></li>
+          <li><a href="#section4">Portfolio</a></li>
+          <li><a href="#Contactanos">Contact Us</a></li>
           <li><a href="#section5">Blog</a></li>
         </ul>
       </nav>
@@ -42,30 +42,30 @@
       <div class="video-container">
         <video id="videoVideo" autoplay muted loop playsinline preload="auto">
           <source src="assets/nointro.mp4" type="video/mp4" />
-          Tu navegador no soporta este video.
+          Your browser does not support this video.
         </video>
       </div>
       <!-- Eslogan animado sobre el video grande -->
       <div class="slogan-container">
-        <h1 class="slogan slogan-1">Innovación en cada proyecto</h1>
-        <h1 class="slogan slogan-2">Construimos tu futuro</h1>
-        <h1 class="slogan slogan-3">Calidad y confianza</h1>
+        <h1 class="slogan slogan-1">Innovation in Every Project</h1>
+        <h1 class="slogan slogan-2">We Build Your Future</h1>
+        <h1 class="slogan slogan-3">Quality you can Trust</h1>
       </div>
     </div>
     <div class="video small-screen-video">
       <div class="video-container">
         <video id="video-vertical" autoplay muted loop playsinline preload="auto">
           <source src="assets/videocerticalbaja.mp4" type="video/mp4" />
-          Tu navegador no soporta este video.
+          Your browser does not support this video.
         </video>
       </div>
       <!-- Eslogan animado sobre el video grande -->
       <div class="slogan-container">
-        <h1 class="slogan slogan-1">Construimos tu futuro</h1>
+        <h1 class="slogan slogan-1">We Build Your Future</h1>
         <h1 class="slogan slogan-2"></h1>
-        <h1 class="slogan slogan-3">Calidad y confianza</h1>
+        <h1 class="slogan slogan-3">Quality you can Trust</h1>
         <h1 class="slogan slogan-4"></h1>
-        <h1 class="slogan slogan-5">Innovación en cada proyecto</h1>
+        <h1 class="slogan slogan-5">Innovation in Every Project</h1>
         <h1 class="slogan slogan-6"></h1>
       </div>
     </div>
@@ -74,25 +74,25 @@
 <div class="form-popup hidden" id="form">
   <form class="form-container">
     <span class="close-btn" id="close-btn">&times;</span>
-    <h2>Cuéntanos sobre ti</h2>
+    <h2>Tell Us About You</h2>
     <div class="form-group">
-      <label for="nombre">Nombre</label>
+      <label for="nombre">Name</label>
       <input
         type="text"
         id="nombre"
         name="nombre"
-        placeholder="Nombre (Obligatorio)"
+        placeholder="Name (Required)"
         required
       />
     </div>
     <div class="form-group">
-      <label for="whatsapp">Número de WhatsApp</label>
+      <label for="whatsapp">WhatsApp Number</label>
       <input
         type="tel"
         id="whatsapp"
         name="whatsapp"
         required
-        placeholder="Ingrese su número de WhatsApp (Obligatorio)"
+        placeholder="Enter your WhatsApp number (Required)"
       />
       <span
         id="whatsapp-error"
@@ -101,12 +101,12 @@
       ></span>
     </div>
     <div class="form-group autocomplete">
-      <label for="email">Correo electrónico</label>
+      <label for="email">Email</label>
       <input
         type="text"
         id="email"
         name="email"
-        placeholder="Ingrese su correo electrónico"
+        placeholder="Enter your email"
       />
       <span
         id="email-error"
@@ -117,45 +117,45 @@
 
     <!-- Selector para Tipo de Proyecto -->
     <div class="form-group">
-      <label for="proyec-horizontalto">Tipo de Proyecto</label>
+      <label for="proyec-horizontalto">Type of Project</label>
       <select id="proyecto" name="proyecto">
-        <option value="" disabled selected>Seleccione un tipo de proyecto</option>
-        <option value="construccion">Construcción</option>
-        <option value="remodelacion">Remodelación</option>
-        <option value="reparacion">Reparación</option>
+        <option value="" disabled selected>Select a type of project</option>
+        <option value="construccion">Construction</option>
+        <option value="remodelacion">Remodeling</option>
+        <option value="reparacion">Repair</option>
       </select>
     </div>
 
     <!-- Selector para Presupuesto -->
     <div class="form-group">
-      <label for="presupuesto">Presupuesto</label>
+      <label for="presupuesto">Budget</label>
       <select id="presupuesto" name="presupuesto">
-        <option value="" disabled selected>Seleccione un rango de presupuesto</option>
+        <option value="" disabled selected>Select a budget range</option>
         <option value="1-500">1$ - 500$</option>
         <option value="501-1000">501$ - 1000$</option>
         <option value="1001-5000">1001$ - 5000$</option>
-        <option value="5001-mas">5000$ - más</option>
+        <option value="5001-mas">5000$ - more</option>
       </select>
     </div>
 
     <!-- Selector para Financiado -->
     <div class="form-group">
-      <label for="financiado">Financiado</label>
+      <label for="financiado">Financed</label>
       <select id="financiado" name="financiado">
-        <option value="" disabled selected>¿Está financiado?</option>
-        <option value="si">Sí</option>
+        <option value="" disabled selected>Is it financed?</option>
+        <option value="si">Yes</option>
         <option value="no">No</option>
       </select>
     </div>
 
-    <button type="submit" class="btn">Enviar</button>
+    <button type="submit" class="btn">Submit</button>
   </form>
 </div>
 
 
     <!-- Componente: Animación de carga -->
     <div id="loading-animation" style="display: none">
-      Enviando<span class="dots">
+      Sending<span class="dots">
         <span>.</span>
         <span>.</span>
         <span>.</span>
@@ -163,36 +163,36 @@
     </div>
 
     <!-- Componente: Mensaje de éxito -->
-    <div id="success-message" style="display: none">¡Enviado con éxito!</div>
+    <div id="success-message" style="display: none">Successfully Sent!</div>
     
   <!-- Sección Conócenos con efecto Parallax -->
 <section class="parallax-container" id="Conocenos">
   <div class="conocenos-row">
     <!-- Tarjeta Conócenos -->
     <div class="conocenos-content">
-      <h1 class="set-title-animation">Conócenos</h1>
+      <h1 class="set-title-animation">About Us</h1>
       <div class="text-section">
         <p class="text-short">
-          <strong>Sacro Construction Group</strong> es una empresa especializta en remodelación y construcción desde cero, gestionando y ejecutando cada proyecto...
+          <strong>Sacro Construction Group</strong> is a company specializing in remodeling and construction from scratch, managing and executing each project...
         </p>
         <p class="text-full">
-          <strong>Sacro Construction Group</strong> es una empresa especializta, tanto en remodelación como construcción desde cero, gestionamos y ejecutamos cada proyecto de principio a fin. Ya sea transformando hogares para crear espacios acogedores, modernos y con acabados de lujo para su familia, o construyendo desde la base oficinas y locales comerciales, nos aseguramos de que cada detalle sea perfecto. Nos encargamos de la planificación, supervisión y ejecución de la obra, garantizando que cada proyecto se entregue con la máxima calidad y dentro del presupuesto, creando lugares donde vivir y trabajar se convierta en una experiencia excepcional.
+          <strong>Sacro Construction Group</strong> is a company specializing in both remodeling and new construction, managing and executing each project from start to finish. Whether transforming homes to create cozy, modern spaces with luxury finishes for your family or building offices and commercial spaces from the ground up, we ensure that every detail is perfect. We handle the planning, supervision, and execution of the work, ensuring that each project is delivered with the highest quality and within budget, creating places where living and working become an exceptional experience.
         </p>
-        <button class="read-more-btn" onclick="toggleText(this)">Leer más...</button>
+        <button class="read-more-btn" onclick="toggleText(this)">Read More...</button>
       </div>
     </div>
 
     <!-- Tarjeta Nuestra Visión -->
     <div class="conocenos-content">
-      <h2 class="set-title-animation">Nuestra Visión</h2>
+      <h2 class="set-title-animation">Our Vision</h2>
       <div class="text-section">
         <p class="text-short">
-          Nuestra visión es ser líderes en la industria de la construcción y remodelación, donde cada proyecto refleje nuestra dedicación a crear espacios únicos...
+          Our vision is to be leaders in the construction and remodeling industry, where every project reflects our dedication to creating unique spaces...
         </p>
         <p class="text-full">
-          Nuestra visión es ser reconocidos como líderes en la industria de la construcción y remodelación, donde cada proyecto refleje nuestra dedicación a crear espacios únicos, acogedores y modernos. Expandirnos hasta tener activida en toda la nación. Buscamos constantemente estar a la vanguardia de los avances del sector, aplicando las últimas técnicas y tecnologías para mantener la excelencia en cada detalle, todo ello sin perder de vista el control del presupuesto y garantizando acabados de lujo. Queremos que nuestros proyectos no solo cumplan con las expectativas de nuestros clientes, sino que las superen, convirtiendo sus espacios en lugares excepcionales para vivir y trabajar.
+          Our vision is to be recognized as leaders in the construction and remodeling industry, where every project reflects our dedication to creating unique, cozy, and modern spaces. We aim to expand nationwide. We constantly seek to stay at the forefront of industry advancements, applying the latest techniques and technologies to maintain excellence in every detail, all while keeping budget control in mind and ensuring luxury finishes. We want our projects not only to meet but exceed our clients' expectations, turning their spaces into exceptional places to live and work.
         </p>
-        <button class="read-more-btn" onclick="toggleText(this)">Leer más...</button>
+        <button class="read-more-btn" onclick="toggleText(this)">Read More...</button>
       </div>
     </div>
   </div>
@@ -200,20 +200,19 @@
   <!-- Tarjeta con la foto de la CEO -->
   <div class="center-section">
     <div class="photo-section">
-      <img src="assets/ceo.png" alt="Foto de la CEO" class="ceo-photo" />
+      <img src="assets/ceo.png" alt="Photo of the CEO" class="ceo-photo" />
       <h1 id="rasec">Rasec Martinez</h1>
-      <h2>Directora General</h2>
+      <h2>Chief Executive Officer</h2>
     </div>
 
     <div class="text-section">
       <p class="text-short">
-        Ingeniero, <strong>Rasec Martínez</strong>, nuestra CEO, es una profesional destacada con una trayectoria sólida en la industria de la construcción...
+        Engineer, <strong>Rasec Martinez</strong>, our CEO, is a distinguished professional with a solid career in the construction industry...
       </p>
       <p class="text-full">
-        Ingeniero, <strong>Rasec Martínez</strong>, nuestra CEO, es una profesional destacada con una trayectoria sólida en la industria de la construcción y remodelación. Nacida en [espacio para fecha de nacimiento] y actualmente residiendo en Orlando, Florida, es emigrante de Venezuela y Licenciada en Informática por la [nombre de la universidad]. Nuestra directora ha complementado su formación con estudios en bienes raíces, lo que le permite tener una perspectiva integral del negocio. Su conocimiento abarca desde la tecnología aplicada en la construcción hasta la gestión de proyectos inmobiliarios, consolidando su capacidad para ofrecer soluciones innovadoras y eficaces.
-        Con su carisma y liderazgo, lidera nuestro equipos de trabajo, guiándonos con energía y compromiso para hacer realidad los proyectos de nuestros clientes. Su profundo conocimiento del sector, combinado con su enfoque innovador, le permite transformar ideas en resultados concretos, siempre enfocándose en la excelencia.
+        Engineer, <strong>Rasec Martinez</strong>, our CEO, is a distinguished professional with a solid career in the construction and remodeling industry. Born in [space for birth date] and currently residing in Orlando, Florida, she is an immigrant from Venezuela and holds a degree in Computer Science from [university name]. Our director has complemented her education with studies in real estate, giving her a comprehensive perspective on the business. Her knowledge spans from technology applied in construction to real estate project management, consolidating her ability to offer innovative and effective solutions. With her charisma and leadership, she guides our team, leading us with energy and commitment to bring our clients' projects to life. Her deep knowledge of the sector, combined with her innovative approach, allows her to turn ideas into concrete results, always focusing on excellence.
       </p>
-      <button class="read-more-btn" onclick="toggleText(this)">Leer más...</button>
+      <button class="read-more-btn" onclick="toggleText(this)">Read More...</button>
     </div>
   </div>
 </section>
@@ -227,12 +226,12 @@
         </div>
         <div class="whatsapp-text-content">
           <p>
-            Comunícate con:<br />
-            Rasec Martínez<br />
-            Gerente General
+            Contact:<br />
+            Rasec Martinez<br />
+            General Manager
           </p>
           <a href="https://wa.me/529619373640" class="whatsapp-link button"
-            >CONTACTAME</a
+            >CONTACT ME</a
           >
         </div>
       </div>
@@ -243,7 +242,7 @@
   <article class="wrapper">
   </article>
   <h1>
-    <span class="title-left">Nuestros Servicios</span>
+    <span class="title-left">Our Services</span>
   </h1>
   <div class="service-row">
     <!-- Cuadros en el área gris -->
@@ -251,28 +250,28 @@
       <div class="icon">
         <i class="fas fa-project-diagram"></i>
       </div>
-      <h3>Gerencia de Proyectos</h3>
-      <p>Planificación y ejecución eficiente.</p>
+      <h3>Project Management</h3>
+      <p>Efficient planning and execution.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Gerencia de Proyectos <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Project Management <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Planificación, coordinación y control de recursos</li>
-          <li>Gestión de tiempos, costos y proveedores</li>
-          <li>Supervisión y control de calidad</li>
+          <li>Planning, coordination, and resource control</li>
+          <li>Time, cost, and supplier management</li>
+          <li>Supervision and quality control</li>
         </ul>
-        <h4>Supervisión de Obra <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Site Supervision <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Monitoreo de calidad y avances de la obra</li>
-          <li>Verificación del cumplimiento de normativas y especificaciones técnicas</li>
+          <li>Monitoring of quality and project progress</li>
+          <li>Verification of compliance with regulations and technical specifications</li>
         </ul>
-        <h4>Seguridad de Obra <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Site Safety <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Implementación de medidas de seguridad laboral</li>
-          <li>Evaluación y mitigación de riesgos en la obra</li>
-          <li>Inspección de seguridad para trabajadores</li>
+          <li>Implementation of occupational safety measures</li>
+          <li>Risk assessment and mitigation on site</li>
+          <li>Safety inspection for workers</li>
         </ul>
       </div>
     </div>
@@ -281,29 +280,29 @@
       <div class="icon">
         <i class="fas fa-hard-hat"></i>
       </div>
-      <h3>Construcción</h3>
-      <p>Edificaciones sólidas y confiables.</p>
+      <h3>Construction</h3>
+      <p>Solid and reliable buildings.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Construcción de Viviendas</h4>
-        <h4>Construcción de Oficinas y Locales Comerciales</h4>
-        <h4>Construcción Industrial</h4>
-        <h4>Construcción de Piscinas y Áreas Recreativas</h4>
-        <h4>Obra Civil</h4>
-        <h4>Paisajismo y Landscaping</h4>
-        <h4>Instalaciones MEP <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Residential Construction</h4>
+        <h4>Commercial and Office Construction</h4>
+        <h4>Industrial Construction</h4>
+        <h4>Pool and Recreational Area Construction</h4>
+        <h4>Civil Works</h4>
+        <h4>Landscaping and Landscaping</h4>
+        <h4>MEP Installations <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Mecánica (HVAC)</li>
-          <li>Eléctrica</li>
-          <li>Plomería</li>
+          <li>Mechanical (HVAC)</li>
+          <li>Electrical</li>
+          <li>Plumbing</li>
         </ul>
-        <h4>Herrería, Soldadura y Cerrajería <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Metalwork, Welding, and Locksmithing <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Herrería</li>
-          <li>Soldadura Metalúrgica</li>
-          <li>Cerrajería</li>
+          <li>Metalwork</li>
+          <li>Welding</li>
+          <li>Locksmithing</li>
         </ul>
       </div>
     </div>
@@ -312,27 +311,27 @@
       <div class="icon">
         <i class="fas fa-paint-roller"></i>
       </div>
-      <h3>Remodelación</h3>
-      <p>Renovación con estilo y calidad.</p>
+      <h3>Remodeling</h3>
+      <p>Stylish and quality renovations.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Remodelación de Interiores <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Interior Remodeling <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Cocinas</li>
-          <li>Baños</li>
-          <li>Salas y Habitaciones</li>
-          <li>Áreas Comunes (salas, comedores, recibidores)</li>
+          <li>Kitchens</li>
+          <li>Bathrooms</li>
+          <li>Living Rooms and Bedrooms</li>
+          <li>Common Areas (living rooms, dining rooms, foyers)</li>
         </ul>
-        <h4>Remodelación de Exteriores <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Exterior Remodeling <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Fachadas</li>
-          <li>Terrazas y Porches</li>
-          <li>Paisajismo y Jardinería (Landscaping)</li>
+          <li>Facades</li>
+          <li>Terraces and Porches</li>
+          <li>Landscaping and Gardening (Landscaping)</li>
         </ul>
-        <h4>Remodelación Comercial y de Oficinas</h4>
-        <h4>Remodelación de Piscinas y Áreas Recreativas</h4>
+        <h4>Commercial and Office Remodeling</h4>
+        <h4>Pool and Recreational Area Remodeling</h4>
       </div>
     </div>
 
@@ -340,14 +339,14 @@
       <div class="icon">
         <i class="fas fa-lightbulb"></i>
       </div>
-      <h3>Soluciones Tecnológicas y Ecológicas</h3>
-      <p>Innovación para un futuro sostenible.</p>
+      <h3>Technological and Ecological Solutions</h3>
+      <p>Innovation for a sustainable future.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Smart Home (Automatización del Hogar)</h4>
-        <h4>Soluciones Ecológicas</h4>
+        <h4>Smart Home (Home Automation)</h4>
+        <h4>Ecological Solutions</h4>
       </div>
     </div>
 
@@ -356,23 +355,23 @@
       <div class="icon">
         <i class="fa-solid fa-toolbox"></i>
       </div>
-      <h3>24/7 Trabajos Urgentes</h3>
-      <p>Siempre a tu disposición.</p>
+      <h3>24/7 Emergency Services</h3>
+      <p>Always at your disposal.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Electricidad <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Electrical Services <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Reparación de fallas eléctricas urgentes</li>
-          <li>Restauración de energía y sistemas eléctricos</li>
-          <li>Sustitución de interruptores y enchufes</li>
+          <li>Urgent electrical repairs</li>
+          <li>Energy and electrical system restoration</li>
+          <li>Replacement of switches and outlets</li>
         </ul>
-        <h4>Plomería <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Plumbing <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Reparación de fugas de agua y gas</li>
-          <li>Desbloqueo de tuberías y drenajes</li>
-          <li>Reparación urgente de calentadores de agua</li>
+          <li>Leak repair for water and gas</li>
+          <li>Unclogging pipes and drains</li>
+          <li>Urgent water heater repair</li>
         </ul>
       </div>
     </div>
@@ -381,17 +380,17 @@
       <div class="icon">
         <i class="fas fa-wrench"></i>
       </div>
-      <h3>Mantenimiento y Reparaciones</h3>
-      <p>Conservación y arreglos profesionales.</p>
+      <h3>Maintenance and Repairs</h3>
+      <p>Professional preservation and repairs.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Trabajos de Electricista</h4>
-        <h4>Trabajos de Plomería</h4>
-        <h4>Trabajos de Carpintería</h4>
-        <h4>Herrería y Soldadura</h4>
-        <h4>Cerrajería</h4>
+        <h4>Electrical Work</h4>
+        <h4>Plumbing Work</h4>
+        <h4>Carpentry Work</h4>
+        <h4>Metalwork and Welding</h4>
+        <h4>Locksmithing</h4>
       </div>
     </div>
 
@@ -399,27 +398,27 @@
       <div class="icon">
         <i class="fas fa-chalkboard-teacher"></i>
       </div>
-      <h3>Consultoría</h3>
-      <p>Asesoramiento experto en cada paso.</p>
+      <h3>Consulting</h3>
+      <p>Expert advice at every step.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Consultoría en Diseño Estructural <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Structural Design Consulting <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Cálculo y diseño de estructuras de acero y concreto</li>
-          <li>Evaluación de riesgos sísmicos y estabilidad estructural</li>
+          <li>Calculation and design of steel and concrete structures</li>
+          <li>Seismic risk assessment and structural stability</li>
         </ul>
-        <h4>Consultoría en Sostenibilidad <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>Sustainability Consulting <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Asesoría en construcción sostenible (LEED, Passive House)</li>
-          <li>Optimización de consumo energético y recursos hídricos</li>
-          <li>Uso de materiales ecológicos y reciclables</li>
+          <li>Advice on sustainable construction (LEED, Passive House)</li>
+          <li>Optimization of energy and water resource consumption</li>
+          <li>Use of ecological and recyclable materials</li>
         </ul>
-        <h4>Consultoría en Instalaciones MEP <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
+        <h4>MEP Installations Consulting <span class="toggle-submenu"><i class="fas fa-chevron-down"></i></span></h4>
         <ul>
-          <li>Diseño y planificación de sistemas mecánicos, eléctricos y plomería</li>
-          <li>Evaluación de eficiencia energética y soluciones inteligentes (domótica)</li>
+          <li>Design and planning of mechanical, electrical, and plumbing systems</li>
+          <li>Energy efficiency assessment and smart solutions (home automation)</li>
         </ul>
       </div>
     </div>
@@ -428,14 +427,14 @@
       <div class="icon">
         <i class="fa-solid fa-house-laptop"></i>
       </div>
-      <h3>Otros</h3>
-      <p>Servicios adicionales para tu comodidad.</p>
+      <h3>Other Services</h3>
+      <p>Additional services for your convenience.</p>
       <div class="toggle-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
       <div class="sub-menu">
-        <h4>Trámites y Permisos</h4>
-        <h4>Demolición y Manejo de Residuos</h4>
+        <h4>Permits and Licensing</h4>
+        <h4>Demolition and Waste Management</h4>
       </div>
     </div>
   </div>
@@ -447,55 +446,49 @@
   <h1 id="Direccion">Orlando, Florida</h1>
  <div class="location-info">
     <div class="location">
-      <h2>Sede Central</h2>
+      <h2>Headquarters</h2>
       <p>932 E Osceola Pkwy Suit 103 Kissimmee </p>
       <p>FL 34744</p>
       <button onclick="window.open('https://www.google.com/maps?q=932+E+Osceola+Pkwy+Suit+103+Kissimmee+FL+34744', '_blank')" class="btn-map">
-        Ver en Google Maps
+        View on Google Maps
       </button>
     </div>
     <div class="location">
       <h2>Showroom</h2>
-      <p>6343 all American blvd Orlando </p>
+      <p>6343 all American Blvd Orlando </p>
       <p>FL 32810</p>
       <button onclick="window.open('https://www.google.com/maps?q=6343+All+American+Blvd+Orlando+FL+32810', '_blank')" class="btn-map">
-        Ver en Google Maps
+        View on Google Maps
       </button>
     </div>
   </div>
 </div> 
   <div class="container">
   
-<h1>Nuestro equipo esta listo para responderte siempre</h1>
+<h1>Our team is ready to assist you at any time</h1>
 
     <!-- Formulario de contacto -->
     <div class="contact-form">
       <form id="contactForm" action="#" method="POST">
         <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+          <label for="nombre">Name:</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Your name" required />
         </div>
         <div class="form-group">
-          <label for="correo">Correo Electrónico:</label>
-          <input type="email" id="correo" name="correo" placeholder="Tu correo electrónico" required />
+          <label for="correo">Email:</label>
+          <input type="email" id="correo" name="correo" placeholder="Your email" required />
         </div>
         <div class="form-group">
-          <label for="mensaje">Mensaje:</label>
-          <textarea id="mensaje" name="mensaje" placeholder="Tu mensaje" rows="5" required></textarea>
+          <label for="mensaje">Message:</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Your message" rows="5" required></textarea>
         </div>
-        <button type="submit" class="btn-submit">Enviar</button>
+        <button type="submit" class="btn-submit">Send</button>
       </form>
     </div>
-
-   
-
-  </div>
+ </div>
 </section>
 
-
-
-
-    <!-- Pie de página -->
+  <!-- Pie de página -->
     <footer class="hidden">
       <div class="footer-content">
         <div class="footer-section social-icons">
@@ -545,8 +538,7 @@
         </div>
         <div class="footer-copy">
           <span class="copy-text"
-            >© 2023 CBP One Consulting. Todos los derechos
-            reservados. Al Ingresar a nuestro sitio, usted esta deacuerdo con nuestros términos de uso y políticas de privacidad</span>
+            >© 2023 CBP One Consulting. All rights reserved. By entering our site, you agree to our terms of use and privacy policy</span>
         </div>
       </div>
     </footer>
