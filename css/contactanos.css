@@ -2,7 +2,7 @@
 .contact-section {
   background-color: #1a1a1a; /* Fondo oscuro */
   color: #ffffff; /* Texto en blanco */
-  padding: 50px 20px;
+
   text-align: center;
 }
 
@@ -68,20 +68,27 @@
 }
 
 /* Estilos de la información de las ubicaciones */
+#Direccion {
+  padding-top: 70px;
+  margin: 0px;
+}
+.location-info-wrapper {
+  background-color: #000000;
+}
 .location-info {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 5px;
   flex-wrap: wrap;
+  background-color: #000000;
+  margin: 0px;
+  padding-bottom: 20px;
 }
 
 .location {
-  background-color: #333333; /* Fondo de las cajas de ubicación */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 10px;
   flex: 1;
-  min-width: 300px;
+  min-width: 30px;
 }
 
 .location h2 {
@@ -94,9 +101,9 @@
 }
 
 .location .btn-map {
-  background-color: #d3c016; /* Color del botón */
+  background-color: #ffffff; /* Color del botón */
   color: #1a1a1a; /* Color del texto del botón */
-  padding: 10px 20px;
+
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -105,8 +112,8 @@
 }
 
 .location .btn-map:hover {
-  background-color: #ffffff; /* Efecto hover del botón */
-  color: #1a1a1a; /* Texto del botón en hover */
+  background-color: #000000; /* Efecto hover del botón */
+  color: #ffffff; /* Texto del botón en hover */
 }
 
 /* Adaptaciones para pantallas pequeñas */

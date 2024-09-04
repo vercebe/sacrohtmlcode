@@ -19,3 +19,7 @@ body {
   color: #000; /* Color de texto negro */
   overflow-y: yes;
 }
+/* Sobreescribe las esquinas redondeadas de todas las secciones */
+section {
+  border-radius: 0 !important; /* Asegura que las esquinas sean cuadradas */
+}
