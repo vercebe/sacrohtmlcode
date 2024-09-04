@@ -19,29 +19,3 @@ body {
   color: #000; /* Color de texto negro */
   overflow-y: yes;
 }
-
-/* Componente: Carrusel de imágenes */
-.carousel {
-  margin-top: 80px; /* Espacio superior de 80px (debajo del header) */
-  height: 450px; /* Altura del carrusel en 450px */
-  background-color: #e0e0e0; /* Fondo gris claro */
-  display: flex; /* Uso de Flexbox para centrar el contenido */
-  justify-content: center; /* Centra horizontalmente el contenido */
-  align-items: center; /* Centra verticalmente el contenido */
-}
-
-.carousel-item {
-  width: 100%; /* Ancho completo */
-  height: 100%; /* Altura completa */
-  overflow: hidden; /* Oculta el desbordamiento */
-  display: flex; /* Uso de Flexbox para centrar la imagen */
-  justify-content: center; /* Centra horizontalmente la imagen */
-  align-items: center; /* Centra verticalmente la imagen */
-  transition: transform 0.5s ease-in-out; /* Transición suave de movimiento */
-}
-
-.carousel-item img {
-  width: 100%; /* Imagen se adapta al ancho completo */
-  height: 100%; /* Imagen se adapta a la altura completa */
-  object-fit: cover; /* Cubre el contenedor manteniendo la proporción */
-}
