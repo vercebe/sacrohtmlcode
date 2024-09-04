@@ -6,6 +6,7 @@
   padding-top: 70px; /* Espacio para que no lo tape el nav */
   position: relative;
   z-index: 1; /* Para que el contenido esté por encima de la franja */
+  margin-top: -50px;
 }
 
 /* Inclinación diagonal del fondo */
