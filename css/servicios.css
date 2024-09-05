@@ -1,18 +1,25 @@
 /* Efecto de fondo con desplazamiento */
+#Servicios {
+  overflow-x: hidden;
+}
+
 .wrapper {
   animation: scroll-background 100s linear infinite; /* Anima el fondo para desplazarse continuamente */
   background: url("../assets/woodfondo.png") #111111; /* Imagen de fondo y color de respaldo */
+  background-size: cover; /* El fondo cubre toda la pantalla */
+  background-position: center center; /* El fondo se centra */
+  background-repeat: no-repeat; /* Evita que el fondo se repita */
+  background-attachment: fixed; /* Fija el fondo */
   color: #eee;
   height: 100vh; /* Altura del contenedor para que cubra toda la pantalla */
-  min-width: 360px;
-  width: 100%;
+  width: 100vw; /* Ajusta el ancho al 100% del viewport */
+  overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
   position: fixed; /* Fija la posición del fondo para que se mantenga detrás del contenido */
   top: 0;
+  overflow-x: hidden;
   left: 0;
   z-index: -1; /* Se asegura de que esté detrás de todo el contenido */
 }
@@ -172,7 +179,7 @@ h1.title-left,
 
 /* Carrusel de imágenes */
 .slider {
-  height: 320px; /* Ajustado para el título */
+  height: 250px; /* Ajustado para el título */
   margin: 0 auto; /* Para centrar */
   overflow: hidden;
   position: relative;
@@ -183,6 +190,8 @@ h1.title-left,
 .slide-track {
   animation: scroll-images 40s linear infinite; /* Cambié el nombre de la animación */
   display: flex;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+
   width: calc((250px + 5px) * 14); /* Ajustado para 14 imágenes */
 }
 
@@ -205,7 +214,7 @@ h1.title-left,
 /* Estilo de las imágenes */
 .slide img {
   width: 250px; /* Ancho de la imagen */
-  height: 320px; /* Alto de la imagen */
+  height: 250px; /* Alto de la imagen */
   object-fit: fill; /* Asegura que las imágenes se ajusten sin deformarse */
   display: block;
 }

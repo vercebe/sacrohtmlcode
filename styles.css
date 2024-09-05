@@ -11,6 +11,7 @@ html {
 }
 
 /* Estilos generales del cuerpo de la página */
+html,
 body {
   font-family: "Roboto", sans-serif; /* Fuente de texto principal */
   margin: 0px; /* Elimina los márgenes por defecto */
@@ -18,8 +19,10 @@ body {
   background-color: #ffffff; /* Color de fondo blanco */
   color: #000; /* Color de texto negro */
   overflow-y: yes;
+  height: 100%;
 }
 /* Sobreescribe las esquinas redondeadas de todas las secciones */
 section {
   border-radius: 0 !important; /* Asegura que las esquinas sean cuadradas */
+  width: 100%;
 }
