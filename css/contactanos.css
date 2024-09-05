@@ -1,77 +1,70 @@
 /* Sección Contactanos */
 .contact-section {
-  background-color: #1a1a1a; /* Fondo oscuro */
-  color: #ffffff; /* Texto en blanco */
+  background-color: #1a1a1a;
+  color: #ffffff;
   text-align: center;
-  padding-top: 70px; /* Espacio para que no lo tape el nav */
+  padding-top: 70px;
   position: relative;
-  z-index: 1; /* Para que el contenido esté por encima de la franja */
+  z-index: 1;
   margin-top: -50px;
 }
 
 /* Inclinación diagonal del fondo */
 .location-info-wrapper {
   background-color: black;
-  color: white; /* Para que el texto sea legible */
+  color: white;
   width: 100%;
-  height: 500px; /* Aumentamos la altura de la franja */
+  height: 400px;
   position: relative;
-  transform: skewY(-3deg); /* Aplica la inclinación diagonal */
-  margin-top: -110px; /* Ajusta este valor para superponer la franja en la sección anterior */
-  z-index: 0; /* Asegura que la franja quede debajo del contenido */
-  overflow: hidden; /* Oculta cualquier desbordamiento */
+  transform: skewY(-3deg);
+  margin-top: -110px;
+  z-index: 0;
+  overflow: hidden;
 }
 
 /* Estilo del contenido dentro de la franja */
 .location-info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* Permite que las direcciones se ajusten en pantallas pequeñas */
+  flex-wrap: wrap;
   background-color: #000000;
-  padding: 40px; /* Aumentamos el padding para que se vea más ancho */
-  transform: skewY(3deg); /* Revertir la inclinación solo en el contenido */
+  padding: 0;
+  transform: skewY(3deg);
   position: relative;
   z-index: 2;
-  flex-direction: column; /* Alineamos en columna por defecto */
 }
 
-/* Título de la sección Direcciones */
+/* Asegura que el título esté alineado correctamente y no sea tapado por el nav */
 #Direccion {
   font-family: "Montserrat", sans-serif;
-  font-size: 35px; /* Aumentamos el tamaño del título */
-  padding-top: 20px;
-  margin-top: 20px; /* Espacio para que no lo tape el nav */
+  font-size: 30px;
+  padding-top: 50px;
+  margin-top: 60px;
   font-style: normal;
-  text-align: center; /* Alinea el texto en el centro */
-  transform: skewY(3deg); /* Sin inclinación para el título */
+  text-align: center;
+  transform: skewY(3deg);
   position: relative;
   z-index: 2;
-  margin-bottom: 40px; /* Espacio entre el título y las direcciones */
 }
 
-/* Estilo de las direcciones */
 .location {
-  width: 100%; /* Las direcciones ocupan todo el ancho */
-  padding: 20px 0;
-  text-align: center;
+  padding: 10px;
   flex: 1;
+  min-width: 30px;
 }
 
 .location h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
-  margin-bottom: 10px;
 }
 
 .location p {
-  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
 .location .btn-map {
-  background-color: #ffffff; /* Color del botón */
-  color: #1a1a1a; /* Color del texto del botón */
+  background-color: #ffffff;
+  color: #1a1a1a;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -80,13 +73,13 @@
 }
 
 .location .btn-map:hover {
-  background-color: #000000; /* Efecto hover del botón */
-  color: #ffffff; /* Texto del botón en hover */
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* Estilos del formulario */
 .contact-form {
-  background-color: #333333; /* Fondo del formulario */
+  background-color: #333333;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -110,18 +103,18 @@
   padding: 10px;
   border: 1px solid #555555;
   border-radius: 5px;
-  background-color: #1a1a1a; /* Fondo de los campos */
-  color: #ffffff; /* Texto en los campos */
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-  color: #aaaaaa; /* Color del placeholder */
+  color: #aaaaaa;
 }
 
 .contact-form .btn-submit {
-  background-color: #d3c016; /* Color del botón */
-  color: #1a1a1a; /* Color del texto del botón */
+  background-color: #d3c016;
+  color: #1a1a1a;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -131,43 +124,43 @@
 }
 
 .contact-form .btn-submit:hover {
-  background-color: #ffffff; /* Efecto hover del botón */
-  color: #1a1a1a; /* Texto del botón en hover */
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 
 /* Adaptaciones para pantallas pequeñas */
 @media (max-width: 768px) {
   .location-info-wrapper {
-    height: 550px; /* Aumentamos la altura para pantallas pequeñas */
+    height: 600px; /* Aumenta la altura de la franja en pantallas pequeñas */
+    margin-top: -80px; /* Ajusta el margen superior */
   }
 
   .location-info {
-    padding: 20px; /* Reducimos el padding para pantallas pequeñas */
-    flex-direction: column;
-  }
-
-  #Direccion {
-    font-size: 28px; /* Reducimos el tamaño del título */
+    flex-direction: column; /* Coloca los elementos en una columna */
+    align-items: center;
+    justify-content: center;
   }
 
   .location {
-    width: 100%;
-    padding: 15px 0; /* Añadimos más espacio entre direcciones */
+    margin-bottom: 20px; /* Añade espacio entre las secciones de dirección */
+    width: 100%; /* Asegura que cada bloque ocupe el ancho completo */
+    text-align: center; /* Centra el texto en pantallas pequeñas */
   }
 
   .location h2 {
-    font-size: 1.5rem; /* Ajustamos el tamaño de los títulos */
+    font-size: 1.8rem; /* Aumenta ligeramente el tamaño de los títulos */
   }
 
   .location p {
-    font-size: 1rem; /* Ajustamos el tamaño del texto */
+    font-size: 1rem; /* Ajusta el tamaño del texto para mejor legibilidad */
   }
 
+  /* Ajustes para el formulario en pantallas pequeñas */
   .contact-form {
     padding: 15px;
   }
 
   .contact-form .btn-submit {
-    width: 100%;
+    width: 100%; /* Botón ocupa el ancho completo en pantallas pequeñas */
   }
 }
