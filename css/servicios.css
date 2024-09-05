@@ -266,7 +266,9 @@ h1.title-left,
   }
 
   .slide img {
-    width: 100%; /* Las imágenes ocupan todo el ancho disponible */
-    height: auto; /* Ajuste automático de la altura */
+    width: 250px; /* Ancho de la imagen */
+    height: 250px; /* Alto de la imagen */
+    object-fit: fill; /* Asegura que las imágenes se ajusten sin deformarse */
+    display: block;
   }
 }
