@@ -78,6 +78,7 @@
     font-weight: bold;
     width: 80%; /* Aumenta el ancho del contenedor para caber más texto en una línea */
     display: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
   .slogan {
     font-size: 80px; /* Disminuye el tamaño en pantallas pequeñas */
@@ -94,7 +95,7 @@
     ); /* Asegura que el contenedor esté centrado horizontalmente */
     text-align: left; /* El texto comienza desde el lado izquierdo */
     z-index: 2; /* Encima del video */
-    color: #e9c913;
+    color: #ffffff;
     font-size: 70px;
     font-weight: bold;
     width: 80%; /* Ocupa todo el ancho de la pantalla */

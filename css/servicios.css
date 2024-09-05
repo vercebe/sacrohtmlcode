@@ -1,6 +1,6 @@
 /* Efecto de fondo con desplazamiento */
 .wrapper {
-  animation: scroll 100s linear infinite; /* Anima el fondo para desplazarse continuamente */
+  animation: scroll-background 100s linear infinite; /* Anima el fondo para desplazarse continuamente */
   background: url("../assets/woodfondo.png") #111111; /* Imagen de fondo y color de respaldo */
   color: #eee;
   height: 100vh; /* Altura del contenedor para que cubra toda la pantalla */
@@ -17,7 +17,7 @@
   z-index: -1; /* Se asegura de que esté detrás de todo el contenido */
 }
 
-@keyframes scroll {
+@keyframes scroll-background {
   100% {
     background-position: 0px -400%; /* Desplazamiento del fondo */
   }
@@ -26,7 +26,7 @@
 /* Fallback para preferencia de movimiento reducido */
 @media (prefers-reduced-motion) {
   .wrapper {
-    animation: scroll 800s linear infinite; /* Anima el fondo más lentamente si se prefiere movimiento reducido */
+    animation: scroll-background 800s linear infinite; /* Anima el fondo más lentamente si se prefiere movimiento reducido */
   }
 }
 
@@ -55,6 +55,7 @@
   align-items: center;
   margin-bottom: 40px;
   color: #ffffff; /* Título en blanco */
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Efecto de resplandor blanco */
 }
 
 /* Contenedor de las filas de servicios */
@@ -126,111 +127,137 @@
   flex-grow: 1;
 }
 
-/* Estilo para la flecha de expansión */
-.toggle-icon {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  cursor: pointer;
-  margin-top: 15px; /* Espacio adicional sobre la flecha para evitar la superposición */
+/* Efecto de iluminación para "Our Services" y "Take a Look at Our Services" */
+h1.title-left,
+.marquee-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px 0 20px 0;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* Resplandor blanco */
 }
 
-.toggle-icon i {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
-  color: #ffffff; /* Flecha en blanco */
-}
-
-.expanded {
-  padding-bottom: 40px; /* Espacio adicional en la parte inferior de la caja al expandir */
-}
-
-.expanded .toggle-icon i {
-  transform: rotate(180deg); /* Flecha apunta hacia arriba al expandir */
-}
-
-/* Animación de la flecha al hacer hover */
-.toggle-icon:hover i,
-.expanded .toggle-icon:hover i {
-  animation: bounce-up 1s ease infinite; /* Animación de rebote al hacer hover */
-}
-
-@keyframes bounce-up {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Estilo para los submenús */
-.sub-menu {
-  display: none;
-  margin-top: 10px;
-  padding-bottom: 5px;
-}
-
-/* Estilo para los títulos de los submenús */
-.sub-menu h4 {
-  font-size: 0.9rem;
-  margin: 10px 0;
-  cursor: pointer;
+/* Marquesina de texto */
+.marquee-text {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  flex-direction: column; /* Flecha debajo del texto */
-  padding: 10px;
-  border: 1px solid #ffffff; /* Borde blanco */
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco translúcido */
-  color: #ffffff; /* Texto blanco */
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 15px 0;
+  color: #ffffff;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3); /* Resplandor suave */
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Resplandor en las imágenes */
+  margin-bottom: 20px; /* Separación con el slider de imágenes */
 }
 
-/* Estilo específico para los submenús en las cajas negras */
-.gray-box .sub-menu ul {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Fondo blanco translúcido claro para las listas en submenús */
-  color: #ffffff; /* Color del texto en las listas */
-  border-radius: 5px; /* Bordes redondeados para las listas */
+.marquee-text span {
+  display: inline-block;
+  animation: marquee-text-scroll 560s linear infinite; /* Cambié el nombre de la animación */
 }
 
-/* Ajuste del padding para los ítems de los submenús */
-.sub-menu ul li {
-  padding: 5px 10px; /* Espaciado interno para los ítems */
-  margin: 5px 0;
-  border-radius: 3px;
+@keyframes marquee-text-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
-/* Efecto hover para los ítems de los submenús */
-.sub-menu ul li:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Suave fondo blanco translúcido al hacer hover en los ítems */
+/* Carrusel de imágenes */
+.slider {
+  height: 320px; /* Ajustado para el título */
+  margin: 0 auto; /* Para centrar */
+  overflow: hidden;
+  position: relative;
+  width: 100vw; /* Ajustado para que ocupe todo el ancho de la pantalla */
+  margin: 0%;
 }
 
-/* Media queries para diseño responsivo */
+.slide-track {
+  animation: scroll-images 40s linear infinite; /* Cambié el nombre de la animación */
+  display: flex;
+  width: calc((250px + 5px) * 14); /* Ajustado para 14 imágenes */
+}
+
+@keyframes scroll-images {
+  /* Animación para el carrusel de imágenes */
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc((-250px - 5px) * 7));
+  }
+}
+.slide {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-left: 5px;
+}
+
+/* Estilo de las imágenes */
+.slide img {
+  width: 250px; /* Ancho de la imagen */
+  height: 320px; /* Alto de la imagen */
+  object-fit: fill; /* Asegura que las imágenes se ajusten sin deformarse */
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  padding: 2px 0;
+}
+
+/* Animación para el desplazamiento del carrusel */
+@keyframes banner-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Adaptación para pantallas pequeñas */
 @media (max-width: 768px) {
+  @media (prefers-reduced-motion) {
+    .wrapper {
+      animation: scroll-background 400s linear infinite; /* Anima el fondo más lentamente si se prefiere movimiento reducido */
+    }
+  }
+  #Servicios {
+    background-color: rgba(119, 114, 114, 0.151); /* Fondo negro translúcido */
+  }
+
+  /* Sección Servicios adaptable */
   .service-row {
-    flex-direction: column;
+    flex-direction: column; /* Las cajas se apilan en columna */
     align-items: center;
   }
 
   .service-box {
-    width: 80%;
-    margin-bottom: 10px;
+    max-width: 100%; /* Las cajas ocupan todo el ancho disponible */
   }
 
-  #Servicios h1 {
-    font-size: 2.5rem;
+  /* Carrusel adaptable */
+  .slider {
+    height: auto; /* El carrusel se ajusta en altura */
+  }
+
+  .slide img {
+    width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+    height: auto; /* Ajuste automático de la altura */
   }
 }

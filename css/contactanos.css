@@ -14,7 +14,7 @@
   background-color: black;
   color: white; /* Para que el texto sea legible */
   width: 100%;
-  height: 400px; /* Ajusta la altura de la franja, más delgada */
+  height: 500px; /* Aumentamos la altura de la franja */
   position: relative;
   transform: skewY(-3deg); /* Aplica la inclinación diagonal */
   margin-top: -110px; /* Ajusta este valor para superponer la franja en la sección anterior */
@@ -26,40 +26,46 @@
 .location-info {
   display: flex;
   justify-content: space-between;
-
-  flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que las direcciones se ajusten en pantallas pequeñas */
   background-color: #000000;
-  padding: 0;
+  padding: 40px; /* Aumentamos el padding para que se vea más ancho */
   transform: skewY(3deg); /* Revertir la inclinación solo en el contenido */
   position: relative;
   z-index: 2;
+  flex-direction: column; /* Alineamos en columna por defecto */
 }
 
-/* Asegura que el título esté alineado correctamente y no sea tapado por el nav */
+/* Título de la sección Direcciones */
 #Direccion {
   font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  padding-top: 50px;
-  margin-top: 60px; /* Espacio para que no lo tape el nav */
+  font-size: 35px; /* Aumentamos el tamaño del título */
+  padding-top: 20px;
+  margin-top: 20px; /* Espacio para que no lo tape el nav */
   font-style: normal;
   text-align: center; /* Alinea el texto en el centro */
   transform: skewY(3deg); /* Sin inclinación para el título */
   position: relative;
   z-index: 2;
+  margin-bottom: 40px; /* Espacio entre el título y las direcciones */
 }
 
+/* Estilo de las direcciones */
 .location {
-  padding: 10px;
+  width: 100%; /* Las direcciones ocupan todo el ancho */
+  padding: 20px 0;
+  text-align: center;
   flex: 1;
-  min-width: 30px;
 }
 
 .location h2 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
 }
 
 .location p {
+  font-size: 1.2rem;
   margin-bottom: 15px;
 }
 
@@ -131,17 +137,32 @@
 
 /* Adaptaciones para pantallas pequeñas */
 @media (max-width: 768px) {
+  .location-info-wrapper {
+    height: 550px; /* Aumentamos la altura para pantallas pequeñas */
+  }
+
   .location-info {
+    padding: 20px; /* Reducimos el padding para pantallas pequeñas */
     flex-direction: column;
-    align-items: center;
+  }
+
+  #Direccion {
+    font-size: 28px; /* Reducimos el tamaño del título */
   }
 
   .location {
-    margin-bottom: 20px;
     width: 100%;
+    padding: 15px 0; /* Añadimos más espacio entre direcciones */
   }
 
-  /* Ajustes para el formulario en pantallas pequeñas */
+  .location h2 {
+    font-size: 1.5rem; /* Ajustamos el tamaño de los títulos */
+  }
+
+  .location p {
+    font-size: 1rem; /* Ajustamos el tamaño del texto */
+  }
+
   .contact-form {
     padding: 15px;
   }
