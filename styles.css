@@ -6,6 +6,7 @@
 @import url("css/conocenos.css");
 @import url("css/servicios.css");
 @import url("css/contactanos.css");
+@import url("css/scroll.css");
 html {
   scroll-behavior: smooth; /* Habilita el smooth scroll en todo el documento */
 }

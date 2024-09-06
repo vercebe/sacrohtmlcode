@@ -385,3 +385,101 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+//indicador scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollIndicator = document.getElementById("scroll-indicator");
+  let isScrolling;
+  let idleTimer;
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  // Función para mostrar la flecha con parpadeo
+  function showIndicator() {
+    scrollIndicator.style.opacity = "1";
+    scrollIndicator.classList.add("show");
+
+    let flashCount = 0;
+    const flashInterval = setInterval(() => {
+      flashCount++;
+      if (flashCount <= 3) {
+        scrollIndicator.style.opacity = flashCount % 2 === 0 ? "1" : "0"; // Parpadea
+      } else {
+        clearInterval(flashInterval);
+        scrollIndicator.style.opacity = "0"; // Oculta la flecha inmediatamente después de parpadear
+        scrollIndicator.classList.remove("show");
+      }
+    }, 500);
+  }
+
+  // Función para verificar la posición del scroll
+  function checkScrollPosition() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const footerHeight = 100;
+
+    if (scrollTop + windowHeight < documentHeight - footerHeight) {
+      showIndicator(); // Muestra la flecha si no está al final
+    } else {
+      scrollIndicator.classList.remove("show");
+    }
+  }
+
+  // Función para gestionar la inactividad
+  function startIdleTimer() {
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => {
+      checkScrollPosition(); // Mostrar flecha después de 12 segundos de inactividad
+      startIdleTimer(); // Volver a iniciar el temporizador
+    }, 12000); // 12 segundos de inactividad
+  }
+
+  // Detectar si el usuario se está moviendo
+  function detectMovement() {
+    const currentScrollTop =
+      window.pageYOffset || document.documentElement.scrollTop;
+    if (currentScrollTop !== lastScrollTop) {
+      clearTimeout(idleTimer); // Reiniciar el temporizador de inactividad al moverse
+      startIdleTimer(); // Iniciar el temporizador nuevamente
+      lastScrollTop = currentScrollTop; // Actualizar la posición
+    }
+  }
+
+  // Detectar si el usuario para de hacer scroll
+  window.addEventListener("scroll", function () {
+    clearTimeout(isScrolling);
+    clearTimeout(idleTimer); // Reiniciar el temporizador de inactividad
+
+    isScrolling = setTimeout(() => {
+      checkScrollPosition(); // Mostrar flecha cuando se detiene el scroll
+      startIdleTimer(); // Iniciar temporizador de inactividad
+    }, 2000); // Después de 2 segundos de detenerse
+
+    detectMovement(); // Detectar movimiento del usuario
+  });
+
+  // Detectar clics en el menú de navegación
+  document.querySelectorAll("nav a").forEach((link) => {
+    link.addEventListener("click", function () {
+      setTimeout(checkScrollPosition, 500); // Mostrar flecha después de hacer clic en la navegación
+    });
+  });
+
+  // Detectar envío o cierre del formulario
+  const form = document.querySelector("form");
+  if (form) {
+    form.addEventListener("submit", function () {
+      setTimeout(checkScrollPosition, 500); // Mostrar flecha después de enviar el formulario
+    });
+
+    const closeButton = document.querySelector(".close-popup");
+    if (closeButton) {
+      closeButton.addEventListener("click", function () {
+        setTimeout(checkScrollPosition, 500); // Mostrar flecha después de cerrar el formulario
+      });
+    }
+  }
+
+  // Mostrar flecha si el usuario para al cargar la página
+  checkScrollPosition();
+  startIdleTimer(); // Iniciar temporizador de inactividad cuando se carga la página
+});
