@@ -140,7 +140,13 @@
   z-index: 6;
   margin-top: 120px;
 }
-
+#slogan3 {
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  z-index: 6;
+}
 /* Contenedor del formulario */
 .contact-form-container {
   background-color: white;
@@ -253,7 +259,8 @@
 }
 
 .contact-form textarea {
-  height: 100px;
+  height: Your vision,
+    our construction! "Making your ideal home a reality" 100px;
   width: 100%;
   max-width: 500px;
 }
@@ -295,11 +302,22 @@
   }
 
   .slogan1 {
-    font-size: 25px;
+    font-size: 16px;
   }
 
   #slogan2 {
-    font-size: 20px;
+    font-size: 25px;
+  }
+  #slogan3 {
+    font-size: 25px;
+    white-space: nowrap; /* Impide que el texto se parta */
+    overflow: hidden; /* Evita que el contenido desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: block;
+    text-align: center; /* Asegura que el texto esté centrado */
   }
 
   #Direccion {
