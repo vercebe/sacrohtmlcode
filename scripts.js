@@ -163,8 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Sugerencia de dominio de correo electrónico al escribir en el campo de email
-  const emailInput = document.getElementById("email");
+  // Sugerencia de dominio de correo electrónico al escribir en los campos de email
   const popularDomains = [
     "gmail.com",
     "hotmail.com",
@@ -173,58 +172,84 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
   let isSuggesting = false;
 
-  emailInput.addEventListener("input", function (event) {
-    const value = emailInput.value;
-    const atIndex = value.indexOf("@");
-
-    if (isSuggesting || event.inputType === "deleteContentBackward") {
-      isSuggesting = false;
-      return;
-    }
-
-    if (atIndex > -1) {
-      const domainInput = value.slice(atIndex + 1);
-      const matchingDomain = popularDomains.find((domain) =>
-        domain.startsWith(domainInput)
-      );
-
-      if (matchingDomain && domainInput.length > 0) {
-        isSuggesting = true;
-        const userInput = value.slice(0, atIndex + 1);
-        emailInput.value = userInput + matchingDomain;
-
-        emailInput.setSelectionRange(
-          userInput.length + domainInput.length,
-          emailInput.value.length
-        );
-
-        setTimeout(() => {
-          isSuggesting = false;
-        }, 0);
-      }
-    }
-  });
-
-  // Autocompletar cuando se presiona "Tab"
-  emailInput.addEventListener("keydown", function (event) {
-    if (event.key === "Tab") {
+  // Función para aplicar el autocompletado a un campo de email
+  function applyEmailAutocomplete(emailInput) {
+    emailInput.addEventListener("input", function (event) {
       const value = emailInput.value;
       const atIndex = value.indexOf("@");
 
-      if (atIndex > -1 && !value.slice(atIndex + 1).includes(".")) {
-        event.preventDefault();
-        const userInput = value.slice(0, atIndex);
-        const domainInput = value.slice(atIndex + 1);
+      // Si se está sugiriendo o el usuario está borrando, permitir que borre sin interferir
+      if (isSuggesting || event.inputType === "deleteContentBackward") {
+        isSuggesting = false;
+        return;
+      }
+
+      // Solo iniciar la sugerencia si hay un "@" en el valor
+      if (atIndex > -1) {
+        const domainInput = value.slice(atIndex + 1); // Texto después de "@"
         const matchingDomain = popularDomains.find((domain) =>
           domain.startsWith(domainInput)
         );
 
-        if (matchingDomain) {
-          emailInput.value = userInput + "@" + matchingDomain;
+        // Si se encuentra un dominio que coincide con la entrada, sugerirlo
+        if (matchingDomain && domainInput.length > 0) {
+          isSuggesting = true;
+          const userInput = value.slice(0, atIndex + 1); // Texto antes y hasta "@"
+          emailInput.value = userInput + matchingDomain;
+
+          // Desactivar temporalmente la validación del campo para que no interfiera con la sugerencia
+          emailInput.setAttribute("type", "text");
+
+          // Seleccionar el texto sugerido para que pueda ser sobrescrito si el usuario continúa escribiendo
+          emailInput.setSelectionRange(
+            userInput.length + domainInput.length,
+            emailInput.value.length
+          );
+
+          setTimeout(() => {
+            isSuggesting = false;
+            // Volver a activar la validación del campo como tipo "email"
+            emailInput.setAttribute("type", "email");
+          }, 0);
         }
       }
-    }
-  });
+    });
+
+    // Autocompletar cuando se presiona "Tab"
+    emailInput.addEventListener("keydown", function (event) {
+      if (event.key === "Tab") {
+        const value = emailInput.value;
+        const atIndex = value.indexOf("@");
+
+        // Si ya hay un "@" pero no hay un dominio completo, autocompletar con "Tab"
+        if (atIndex > -1 && !value.slice(atIndex + 1).includes(".")) {
+          event.preventDefault(); // Evitar que se realice el tab por defecto
+          const userInput = value.slice(0, atIndex);
+          const domainInput = value.slice(atIndex + 1);
+          const matchingDomain = popularDomains.find((domain) =>
+            domain.startsWith(domainInput)
+          );
+
+          if (matchingDomain) {
+            emailInput.value = userInput + "@" + matchingDomain;
+          }
+        }
+      }
+    });
+  }
+
+  // Aplica el autocompletado a los campos de email en ambos formularios
+  const emailInputPopup = document.getElementById("email"); // Campo de email del formulario emergente (popup)
+  const emailInputContactanos = document.getElementById("correo"); // Campo de email del formulario de "Contáctanos"
+
+  // Aplica la funcionalidad de autocompletado a ambos campos, si están presentes
+  if (emailInputPopup) {
+    applyEmailAutocomplete(emailInputPopup);
+  }
+
+  if (emailInputContactanos) {
+    applyEmailAutocomplete(emailInputContactanos);
+  }
 
   // Smooth scroll para enlaces de navegación
   menuLinks.forEach((link) => {

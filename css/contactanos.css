@@ -282,6 +282,10 @@
 .info-blocksmall-screen-hours {
   display: none;
 }
+
+.logoq {
+  padding-bottom: 40px;
+}
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .parallax-image1 {
