@@ -483,3 +483,13 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScrollPosition();
   startIdleTimer(); // Iniciar temporizador de inactividad cuando se carga la página
 });
+
+//efecto zoom
+window.addEventListener("scroll", function () {
+  const scrollPos = window.pageYOffset;
+
+  // Zoom in on the slogan
+  const sloganText = document.querySelector(".slogan1");
+  const zoomInFactor = 1 + scrollPos / 8000; // Adjust zoom factor for slogan
+  sloganText.style.transform = `scale(${zoomInFactor})`;
+});
