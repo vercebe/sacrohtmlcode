@@ -7,9 +7,10 @@
   position: relative;
   z-index: 1;
   margin-top: -50px;
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  width: 100%;
   font-family: "Wix Madefor Display", sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden; /* Evitar desbordamiento horizontal */
 }
 
 /* Inclinación diagonal del fondo */
@@ -19,25 +20,26 @@
   width: 100%;
   height: 400px;
   position: relative;
-  transform: skewY(-5deg); /* Mantener diagonal */
+  transform: skewY(-5deg);
   margin-top: -150px;
   z-index: 3;
   overflow: hidden;
-  box-sizing: border-box; /* Asegurar que márgenes se respeten */
+  box-sizing: border-box;
 }
 
 /* Estilo del contenido dentro de la franja */
 .location-info {
   display: flex;
-  justify-content: space-around; /* Distribuye el espacio uniformemente */
+  justify-content: space-around;
   flex-wrap: wrap;
   background-color: #000000;
-  padding: 0 10%; /* Agrega márgenes laterales para centrar el contenido */
+  padding: 0 10%;
   transform: skewY(5deg);
   position: relative;
   z-index: 4;
-  box-sizing: border-box; /* Asegurar que los márgenes funcionen */
+  box-sizing: border-box;
   color: #ffffff;
+  max-width: 100%; /* Limitar el ancho del contenido */
 }
 
 /* Asegura que el título esté alineado correctamente */
@@ -56,11 +58,11 @@
 .location {
   padding: 10px;
   flex: 1;
-  min-width: 200px; /* Ajustar el mínimo para pantallas pequeñas */
-  text-align: center; /* Centramos todo el contenido */
+  min-width: 200px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar todo en el eje vertical */
+  align-items: center;
 }
 
 .location h2 {
@@ -69,8 +71,8 @@
 }
 
 .location p {
-  margin-bottom: 5px; /* Reducir el espacio entre las líneas de la dirección */
-  line-height: 0; /* Ajustar la altura de línea para reducir el espacio */
+  margin-bottom: 5px;
+  line-height: 1.2; /* Ajuste del espaciado entre líneas */
 }
 
 .location .btn-map {
@@ -100,8 +102,10 @@
   position: relative;
   margin-top: -100px;
   z-index: 1;
+  width: 100%;
   max-width: 100vw;
   transition: transform 0.5s ease, filter 0.1s ease;
+  overflow-x: hidden;
 }
 
 /* Slogan dentro del parallax con zoom in */
@@ -149,16 +153,18 @@
   z-index: 2;
   position: relative;
   box-sizing: border-box;
+  overflow-x: hidden; /* Evitar el desbordamiento horizontal */
 }
 
 .container {
-  width: 100%; /* Ajustar el ancho */
-  margin: 0 auto; /* Centrar el contenedor */
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 10%; /* Márgenes laterales para centrar */
+  padding: 0 10%;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .left-content {
@@ -166,17 +172,14 @@
   margin-right: 50px;
   text-align: center;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .left-content h1,
 .left-content p {
   color: #1a1a1a;
-}
-
-/* Eliminar la separación entre líneas de la dirección */
-.left-content p {
   margin: 0;
-  line-height: 1.2; /* Reduce el espacio entre línea superior y código postal */
+  line-height: 1.2;
 }
 
 .info-block {
@@ -191,14 +194,15 @@
 }
 
 .hour {
-  text-align: center; /* Centrar el "Our working hour" */
+  text-align: center;
   padding-bottom: 10px;
 }
 
 .hours {
   display: flex;
-  justify-content: space-between; /* Distribuye los días y horas */
+  justify-content: space-between;
   text-align: left;
+  width: 100%; /* Asegurar que no se desborde */
 }
 
 .days p,
@@ -215,15 +219,16 @@
   padding-left: 20px;
 }
 
-/* Formulario de contacto a la derecha */
+/* Formulario de contacto */
 .contact-form {
   flex: 1;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 140px;
-  min-width: 520px; /* Limitar el ancho del formulario */
+  min-width: 520px;
   margin: 0 auto;
   padding-bottom: 70px;
+  max-width: 100%; /* Limitar el ancho para evitar desbordamiento */
 }
 
 .contact-form h1 {
@@ -276,16 +281,13 @@
 }
 
 #contact-email {
-  margin-left: -70px; /* Mueve el correo hacia la izquierda */
+  margin-left: -70px;
 }
 
-.info-blocksmall-screen-hours {
-  display: none;
-}
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .parallax-image1 {
-    background-image: url("/assets/servicioslider/bombilla2small.jpg");
+    background-image: url("../assets/servicioslider/bombilla2small.jpg");
     background-size: cover;
     height: 800px;
   }
@@ -312,7 +314,7 @@
 
   .location-info {
     transform: none;
-    padding: 0 5%; /* Ajustar el padding para centrado en pantallas pequeñas */
+    padding: 0 5%;
   }
 
   .contact-section {
@@ -337,14 +339,12 @@
     text-align: center;
   }
 
-  /* Cambios para Our working hour en columnas */
-
   .hour {
     text-align: center;
   }
 
   .hours {
-    flex-direction: column; /* Apilar días y horas en una columna */
+    flex-direction: column;
     align-items: center;
   }
 
@@ -356,7 +356,7 @@
   }
 
   .contact-form {
-    max-width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    max-width: 90%;
     margin: 0 auto;
   }
 
