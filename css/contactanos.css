@@ -5,7 +5,7 @@
   text-align: center;
   padding-top: 70px;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   margin-top: -50px;
   width: 100%;
   font-family: "Wix Madefor Display", sans-serif;
@@ -22,7 +22,7 @@
   position: relative;
   transform: skewY(-5deg);
   margin-top: -150px;
-  z-index: 3;
+  z-index: 6;
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -94,7 +94,7 @@
 /* Efecto parallax */
 .parallax-image1 {
   height: 1000px;
-  background-image: url("../assets/servicioslider/bombilla2.jpg");
+
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
