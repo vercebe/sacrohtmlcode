@@ -285,7 +285,7 @@
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .parallax-image1 {
-    background-image: url("../assets/servicioslider/bombilla2small.jpg");
+    background-image: url("/assets/servicioslider/bombilla2small.jpg");
     background-size: cover;
     height: 800px;
   }
