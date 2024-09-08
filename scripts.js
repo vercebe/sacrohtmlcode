@@ -518,6 +518,7 @@ window.addEventListener("scroll", function () {
   const zoomInFactor = 1 + scrollPos / 8000; // Adjust zoom factor for slogan
   sloganText.style.transform = `scale(${zoomInFactor})`;
 });
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -531,9 +532,8 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   };
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec",
+    "https://script.google.com/macros/s/AKfycbzwcDo5of3XymNHABK1tJbhE-hOCdwMixtTbR4Doqx9LsuhTACF9BxRLZR1GqLpxWM4/exec", // Reemplaza con tu Script ID
     {
-      // Reemplaza con tu Script ID
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -542,7 +542,6 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     .then((response) => response.json())
     .then((data) => {
       document.getElementById("loading-animation").style.display = "none";
-
       if (data.status === "success") {
         document.getElementById("success-message").style.display = "block";
       } else {
