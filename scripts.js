@@ -531,7 +531,7 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   };
 
   fetch(
-    "https://script.google.com/macros/u/1/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec",
+    "https://script.google.com/macros/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec",
     {
       // Reemplaza con tu Script ID
       method: "POST",
