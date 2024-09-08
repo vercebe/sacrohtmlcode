@@ -518,3 +518,39 @@ window.addEventListener("scroll", function () {
   const zoomInFactor = 1 + scrollPos / 8000; // Adjust zoom factor for slogan
   sloganText.style.transform = `scale(${zoomInFactor})`;
 });
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Mostrar animación de carga
+  document.getElementById("loading-animation").style.display = "block";
+
+  const formData = {
+    nombre: document.getElementById("nombre").value,
+    correo: document.getElementById("correo").value,
+    mensaje: document.getElementById("mensaje").value,
+  };
+
+  fetch(
+    "https://script.google.com/macros/u/1/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec",
+    {
+      // Reemplaza con tu Script ID
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      document.getElementById("loading-animation").style.display = "none";
+
+      if (data.status === "success") {
+        document.getElementById("success-message").style.display = "block";
+      } else {
+        document.getElementById("error-message").style.display = "block";
+      }
+    })
+    .catch((error) => {
+      document.getElementById("loading-animation").style.display = "none";
+      document.getElementById("error-message").style.display = "block";
+    });
+});
