@@ -4,179 +4,201 @@ header {
   width: 100%; /* El header ocupa todo el ancho */
   top: 0;
   left: 0;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.315
-  ); /* Color blanco translúcido con baja opacidad */
+  background-color: rgb(0, 0, 0); /* Fondo negro */
   display: flex;
-  justify-content: center; /* Centrar el contenido del nav */
+  justify-content: space-between; /* Espacia logo a la izquierda y nav a la derecha */
   align-items: center;
   z-index: 1000;
   height: 60px; /* Altura estándar del header */
-  backdrop-filter: blur(10px) saturate(180%); /* Desenfoque y saturación para el efecto de vidrio */
-  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Soporte para Safari */
-  border-radius: 0 0 15px 15px; /* Bordes redondeados para el biselado en la parte inferior */
+  border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para darle un aspecto elevado */
   border: 1px solid rgba(255, 255, 255, 0.18); /* Borde suave alrededor del header */
+  color: #fff;
 }
 
 /* Componente: Logo */
 .logo {
-  position: relative; /* Permite ajustar la posición */
-  margin-right: 80px; /* Mueve el logo más a la izquierda */
-  margin-top: 22px; /* Mueve el logo hacia abajo */
-  display: flex; /* Para alinear el logo y el texto del logo juntos */
-  align-items: center; /* Alinea el logo y el texto verticalmente */
+  position: relative;
+  display: flex; /* Para alinear el logo y el texto juntos */
+  align-items: center; /* Alineación vertical */
   z-index: 2000;
+  margin-right: auto; /* Empuja el logo hacia la izquierda */
+  margin-top: 20px;
 }
 
 .logo img {
-  height: 80px; /* Altura del logo en 80px */
+  height: 70px; /* Tamaño del logo */
+  margin-left: 15px;
 }
 
-/* Nombre de la compañía */
 .company-name {
-  margin-left: 15px; /* Espacio a la izquierda del logo */
-  font-size: 28px; /* Tamaño de fuente para el nombre de la compañía */
-  font-weight: bold; /* Fuente en negrita */
-  color: #000000; /* Color del texto negro */
+  margin-left: 15px; /* Espacio entre logo y nombre de la empresa */
+  font-size: 28px; /* Tamaño de la fuente */
+  font-weight: bold; /* Texto en negrita */
+  color: #ffffff; /* Color del texto */
+  margin-bottom: 10px;
 }
 
 /* Componente: Navbar (Menú de navegación) */
 .navbar {
-  display: flex; /* Uso de Flexbox para alinear los elementos del menú */
-  align-items: center; /* Alineación vertical */
-  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Empuja el menú de navegación hacia la derecha */
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
 .navbar ul {
-  list-style-type: none; /* Elimina los puntos de las listas */
-  margin: 0; /* Elimina el margen por defecto */
-  padding: 10px; /* Padding de 10px alrededor del menú */
-  display: flex; /* Uso de Flexbox para alinear los elementos en fila */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Mantener los elementos en fila */
+  gap: 10px; /* Reducir espacio entre los elementos */
 }
 
 .navbar ul li {
-  margin-right: 20px; /* Espacio entre los elementos del menú (20px) */
+  margin-right: 0; /* Elimina margen adicional */
 }
 
 .navbar ul li a {
-  color: #000; /* Color de texto negro para los enlaces */
-  text-decoration: none; /* Elimina el subrayado en los enlaces */
-  font-weight: bold; /* Texto en negrita */
-  padding: 10px 15px; /* Padding de 10px arriba/abajo y 15px izquierda/derecha */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en hover */
-  border-radius: 5px; /* Bordes redondeados en 5px */
+  color: #ffffff; /* Color del texto */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold;
+  padding: 8px 10px; /* Padding ajustado */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px; /* Bordes redondeados */
 }
 
-/* Estilo cuando se pasa el cursor sobre los enlaces */
+/* Hover: Cambiar color de fondo y texto */
 .navbar ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.685); /* Cambia el fondo a negro */
-  color: #fff; /* Cambia el texto a blanco */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  color: #000000; /* Texto negro */
 }
 
-/* Estilos para los enlaces activos o enfocados */
+/* Estilos para enlaces activos o enfocados */
 .navbar ul li a:focus,
 .navbar ul li a:active {
   background-color: #333; /* Fondo gris oscuro */
   color: #fff; /* Texto blanco */
-  transform: scale(0.95); /* Escala ligeramente el tamaño al hacer clic */
-  transition: transform 0.2s ease; /* Transición de la escala */
+  transform: scale(0.95); /* Escala ligera en clic */
+  transition: transform 0.2s ease;
 }
 
 /* Ocultar inicialmente el header */
 .hidden {
-  opacity: 0; /* Totalmente transparente */
-  visibility: hidden; /* Oculto */
-  transition: opacity 1s ease-in-out, visibility 0s 1s; /* Transición suave */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease-in-out, visibility 0s 1s;
 }
 
-/* Mostrar el header después de añadir la clase */
+/* Mostrar el header */
 .delayed-appearance {
-  opacity: 1; /* Totalmente visible */
-  visibility: visible; /* Mostrar */
-  transition: opacity 1s ease-in-out; /* Transición suave en opacidad */
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease-in-out;
 }
 
 .menu-icon {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
-  /* Ajustes para el header */
-  header {
-    justify-content: space-between; /* Espacia el logo y el menú hamburguesa */
+/* Ajustes para pantallas medianas */
+@media only screen and (max-width: 1024px) {
+  .navbar ul li a {
+    font-size: 16px; /* Disminuye el tamaño de las letras para pantallas medianas */
+    padding: 8px 8px; /* Ajustar padding para evitar saltos de línea */
+    white-space: nowrap; /* Evita el salto de línea en las oraciones */
   }
 
-  /* Ajustes para el logo */
+  .company-name {
+    font-size: 24px; /* Disminuir tamaño del nombre de la empresa */
+  }
+
+  .navbar {
+    font-size: 16px; /* Ajuste general de la fuente del menú */
+  }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+  header {
+    justify-content: space-between; /* Espaciar logo y menú hamburguesa */
+  }
+
   .logo {
-    margin-right: 0; /* Elimina el margen grande del logo */
-    margin-top: 20px; /* Elimina el margen superior */
+    margin-right: 0; /* Elimina margen adicional del logo */
+    margin-top: 20px;
     padding-left: 0; /* Alinea el logo a la izquierda */
-    flex: 1; /* Ocupa todo el espacio disponible */
   }
 
   .logo img {
-    height: 50px; /* Ajustar el tamaño del logo en pantallas pequeñas */
+    height: 50px; /* Tamaño más pequeño del logo en pantallas pequeñas */
     padding-left: 20px;
   }
 
   .company-name {
-    font-size: 16px; /* Tamaño de fuente más pequeño para pantallas pequeñas */
-    white-space: nowrap; /* Evita que el texto del nombre se divida en varias líneas */
+    font-size: 16px;
+    white-space: nowrap;
   }
 
-  /* Efecto para el menú hamburguesa */
+  /* Menú hamburguesa */
   .menu-icon {
     display: flex;
-    margin-left: auto; /* Alinea el menú a la derecha */
-    margin-right: 30px; /* Añade espacio entre el icono y el borde */
+    margin-left: auto;
+    margin-right: 30px;
     font-size: 30px;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease; /* Transición suave */
-    color: #000000; /* Color inicial */
+    transition: color 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
   }
 
   .menu-icon:hover {
-    color: #fcfbfb; /* Cambia el color cuando el cursor está encima */
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    color: #fcfbfb;
+    transform: scale(1.1);
   }
 
-  /* Ajustes para el menú desplegable */
+  /* Ajustes para menú desplegable */
   .navbar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-direction: column; /* Alinea los elementos en una columna */
+    flex-direction: column;
     position: absolute;
     top: 60px;
-    left: -100%; /* Oculta el menú fuera de la pantalla inicialmente */
-    width: 100%; /* El menú ocupa todo el ancho */
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
-    transition: left 0.5s ease; /* Transición suave para el deslizamiento */
+    left: -100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: left 0.5s ease;
   }
 
   .navbar ul.show {
-    left: 0; /* Muestra el menú cuando está activo */
+    left: 0;
   }
 
   .navbar ul li {
-    text-align: center; /* Centrar el texto de los enlaces */
-    margin: 8px 0; /* Espaciado entre los enlaces */
+    text-align: center;
+    margin: 8px 0;
   }
 
   .navbar ul li a {
-    color: white; /* Color del texto */
+    color: white;
     padding: 8px;
     display: block;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
   }
 
   .navbar ul li a:hover {
-    background-color: #ffffffd0; /* Cambia el fondo en hover */
-    color: black; /* Cambia el color del texto */
+    background-color: #ffffffd0;
+    color: black;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas (menos de 480px) */
+@media only screen and (max-width: 480px) {
+  .navbar ul li a {
+    font-size: 14px; /* Disminuir el tamaño de las letras aún más */
+    padding: 6px 6px; /* Menos espacio para adaptarse a pantallas más pequeñas */
+  }
+
+  .company-name {
+    font-size: 14px; /* Asegura que el nombre de la empresa no se rompa */
   }
 }

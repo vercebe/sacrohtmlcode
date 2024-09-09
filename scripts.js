@@ -532,24 +532,36 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   };
 
   fetch(
-    "https://script.google.com/macros/s/AKfycbzwcDo5of3XymNHABK1tJbhE-hOCdwMixtTbR4Doqx9LsuhTACF9BxRLZR1GqLpxWM4/exec", // Reemplaza con tu Script ID
+    "https://script.google.com/macros/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec", // Reemplaza con tu Script ID
     {
       method: "POST",
+      mode: "no-cors", // Evita los problemas de CORS
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     }
   )
-    .then((response) => response.json())
-    .then((data) => {
+    .then(() => {
+      // Ocultar animación de carga
       document.getElementById("loading-animation").style.display = "none";
-      if (data.status === "success") {
-        document.getElementById("success-message").style.display = "block";
-      } else {
-        document.getElementById("error-message").style.display = "block";
-      }
+
+      // Mostrar mensaje de éxito porque no podemos obtener respuesta con no-cors
+      document.getElementById("success-message").style.display = "block";
+
+      // Ocultar el mensaje de éxito después de unos segundos
+      setTimeout(() => {
+        document.getElementById("success-message").style.display = "none";
+      }, 4000);
     })
-    .catch((error) => {
+    .catch(() => {
+      // Ocultar animación de carga en caso de error
       document.getElementById("loading-animation").style.display = "none";
+
+      // Mostrar mensaje de error
       document.getElementById("error-message").style.display = "block";
+
+      // Ocultar el mensaje de error después de unos segundos
+      setTimeout(() => {
+        document.getElementById("error-message").style.display = "none";
+      }, 4000);
     });
 });

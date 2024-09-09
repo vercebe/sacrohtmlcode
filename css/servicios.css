@@ -240,7 +240,7 @@ h1.title-left,
 }
 
 /* Adaptación para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   @media (prefers-reduced-motion) {
     .wrapper {
       animation: scroll-background 400s linear infinite; /* Anima el fondo más lentamente si se prefiere movimiento reducido */
@@ -270,5 +270,29 @@ h1.title-left,
     height: 250px; /* Alto de la imagen */
     object-fit: fill; /* Asegura que las imágenes se ajusten sin deformarse */
     display: block;
+  }
+}
+
+/* Ajustes para pantallas medianas entre 891px y 1140px */
+@media (min-width: 891px) and (max-width: 1140px) {
+  .service-row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las cajas se organicen en varias filas */
+    justify-content: center; /* Centra las filas */
+  }
+
+  .service-box {
+    flex: 1 1 calc(25% - 20px); /* Ajusta el ancho de las cajas para que quepan 4 en una fila */
+    max-width: calc(
+      25% - 20px
+    ); /* Asegura que el ancho máximo también permita 4 cajas */
+    margin: 10px; /* Espacio entre las cajas */
+  }
+
+  .service-row .service-box:nth-child(4) ~ .service-box {
+    flex: 1 1 calc(33.33% - 20px); /* Ajusta el ancho para las 3 cajas en la segunda fila */
+    max-width: calc(
+      33.33% - 20px
+    ); /* Asegura que el ancho máximo también permita 3 cajas */
   }
 }

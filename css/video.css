@@ -65,7 +65,7 @@
 }
 
 /* Ajuste de tamaño de los eslóganes en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .slogan-container {
     position: absolute;
     top: 70%;
@@ -82,6 +82,30 @@
   }
   .slogan {
     font-size: 80px; /* Disminuye el tamaño en pantallas pequeñas */
+  }
+}
+/* Ajustes para pantallas medianas entre 891px y 1140px */
+@media (min-width: 891px) and (max-width: 1140px) {
+  .slogan-container {
+    top: 40%; /* Ajusta la posición vertical para pantallas medianas */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    color: rgb(240, 237, 237);
+    font-size: 50px; /* Ajusta el tamaño del texto para que no se salga de los bordes */
+    font-weight: bold;
+    width: 90%; /* Asegura que el contenedor se ajuste al 90% del ancho */
+    display: block; /* Asegura que el contenedor sea visible */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    white-space: normal; /* Permite que el texto se divida en varias líneas si es necesario */
+  }
+
+  .slogan {
+    font-size: 45px; /* Ajusta el tamaño de los eslóganes en pantallas medianas */
+    padding: 0 20px; /* Agrega un pequeño padding para evitar que el texto toque los bordes */
+    text-align: center; /* Asegura que el texto esté centrado */
+    width: 100%; /* El texto ocupará todo el ancho disponible */
   }
 }
 

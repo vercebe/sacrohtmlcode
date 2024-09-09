@@ -91,16 +91,17 @@
 .photo-section h2 {
   color: #ffffff;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 .photo-section h1 {
   font-size: 22px;
-  margin-top: 10px;
 }
 
 .photo-section h2 {
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 0;
 }
 
 /* Estilo del párrafo en la tarjeta grande */

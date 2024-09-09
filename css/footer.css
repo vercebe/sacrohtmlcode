@@ -2,7 +2,7 @@
 footer {
   background-color: rgba(51, 51, 51, 0.5); /* Fondo oscuro translúcido */
   color: #fff; /* Texto blanco */
-  padding: 5px 20px;
+  padding: 5px 0px;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -72,5 +72,6 @@ svg.social-icon {
     margin-top: 7px;
     font-size: 8px;
     color: #fff;
+    text-align: center;
   }
 }

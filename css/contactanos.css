@@ -1,6 +1,6 @@
 /* Sección Contactanos */
 .contact-section {
-  background-color: #1a1a1a;
+  background-color: #d12c2c;
   color: #ffffff;
   text-align: center;
   padding-top: 70px;
@@ -65,7 +65,7 @@
 
 .location h2 {
   font-size: 1.5rem;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Playfair Display", serif;
 }
 
 .location p {
@@ -139,6 +139,7 @@
   color: #000000;
   z-index: 6;
   margin-top: 120px;
+  font-family: "Playfair Display", serif;
 }
 #slogan3 {
   font-size: 40px;
@@ -188,8 +189,8 @@
 .info-block {
   display: inline-block;
   text-align: left;
-  margin-left: 35px;
   align-content: center;
+  align-items: center;
 }
 
 .schedule {
@@ -203,8 +204,7 @@
 
 .hours {
   display: flex;
-  justify-content: space-between; /* Distribuye los días y horas */
-  text-align: left;
+  justify-content: center; /* Distribuye los días y horas */
 }
 
 .days p,
@@ -215,10 +215,12 @@
 
 .days {
   padding-right: 20px;
+  text-align: left;
 }
 
 .times {
   padding-left: 20px;
+  text-align: right;
 }
 
 /* Formulario de contacto a la derecha */
@@ -239,7 +241,6 @@
 
 .contact-form .form-group {
   margin-bottom: 15px;
-  text-align: left;
   min-width: none;
 }
 
@@ -294,7 +295,7 @@
   padding-bottom: 40px;
 }
 /* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 890px) {
   .parallax-image1 {
     background-image: url("/assets/servicioslider/bombilla2small.jpg");
     background-size: cover;
@@ -309,7 +310,7 @@
     font-size: 25px;
   }
   #slogan3 {
-    font-size: 25px;
+    font-size: 18px;
     white-space: nowrap; /* Impide que el texto se parta */
     overflow: hidden; /* Evita que el contenido desborde */
     text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
@@ -361,20 +362,14 @@
 
   /* Cambios para Our working hour en columnas */
 
-  .hour {
+  .hour1 {
     text-align: center;
+    padding-bottom: 5px;
+    font-size: 18px;
   }
 
-  .hours {
-    flex-direction: column; /* Apilar días y horas en una columna */
-    align-items: center;
-  }
-
-  .days p,
-  .times p {
-    margin: 0;
-    padding: 5px 0;
-    text-align: center;
+  #diasa {
+    margin-top: 5px;
   }
 
   .contact-form {
@@ -401,14 +396,46 @@
   }
 
   .contact-form {
-    min-width: 360px;
+    min-width: 340px;
   }
 
   .contact-form textarea {
-    width: 340px;
+    width: 320px;
   }
 
   .info-blocksmall-screen-hours {
     display: block;
+  }
+}
+/* Ajustes para pantallas medianas */
+@media (max-width: 1240px) and (min-width: 891px) {
+  /* Formulario de contacto a la derecha */
+  .contact-form {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-bottom: 140px;
+    max-width: 280px; /* Limitar el ancho del formulario */
+    margin: 0;
+    padding-bottom: 70px;
+    width: 200px;
+  }
+  .contact-form {
+    width: 230px;
+    min-width: 0;
+  }
+
+  .contact-form textarea {
+    max-width: 260px;
+    min-width: 0;
+    height: 80px;
+  }
+  .days {
+    padding-right: 15px;
+    text-align: left;
+  }
+
+  .times {
+    padding-left: 15px;
+    text-align: right;
   }
 }
