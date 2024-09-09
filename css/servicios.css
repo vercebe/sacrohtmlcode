@@ -24,6 +24,23 @@
   z-index: -1; /* Se asegura de que esté detrás de todo el contenido */
 }
 
+.arrow {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 10px auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-image: url("../assets/arrow-down.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute; /* Colocación de la flecha */
+  bottom: 10px; /* Asegura que la flecha esté en la parte inferior */
+  left: 50%;
+  transform: translateX(-50%); /* Centra la flecha horizontalmente */
+}
+
 @keyframes scroll-background {
   100% {
     background-position: 0px -400%; /* Desplazamiento del fondo */
