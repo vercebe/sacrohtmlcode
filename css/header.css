@@ -9,7 +9,7 @@ header {
   justify-content: space-between; /* Espacia logo a la izquierda y nav a la derecha */
   align-items: center;
   z-index: 1000;
-  height: 60px; /* Altura estándar del header */
+  height: 75px; /* Altura estándar del header */
   border-radius: 0 0 15px 15px; /* Bordes redondeados en la parte inferior */
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para darle un aspecto elevado */
   border: 1px solid rgba(255, 255, 255, 0.18); /* Borde suave alrededor del header */
@@ -23,7 +23,6 @@ header {
   align-items: center; /* Alineación vertical */
   z-index: 2000;
   margin-right: auto; /* Empuja el logo hacia la izquierda */
-  margin-top: 20px;
 }
 
 .logo img {
@@ -36,7 +35,7 @@ header {
   font-size: 28px; /* Tamaño de la fuente */
   font-weight: bold; /* Texto en negrita */
   color: #ffffff; /* Color del texto */
-  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 /* Componente: Navbar (Menú de navegación) */
