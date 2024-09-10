@@ -519,49 +519,50 @@ window.addEventListener("scroll", function () {
   sloganText.style.transform = `scale(${zoomInFactor})`;
 });
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+//correo
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Evitar el envío tradicional del formulario
 
-  // Mostrar animación de carga
-  document.getElementById("loading-animation").style.display = "block";
+    // Mostrar la animación de carga (opcional)
+    document.getElementById("loading-animation").style.display = "block";
 
-  const formData = {
-    nombre: document.getElementById("nombre").value,
-    correo: document.getElementById("correo").value,
-    mensaje: document.getElementById("mensaje").value,
-  };
+    // Capturar los datos del formulario
+    var formData = new FormData();
+    formData.append("nombre", document.getElementById("nombre1").value); // Usar el id "nombre1" pero enviar como "nombre"
+    formData.append("correo", document.getElementById("correo").value);
+    formData.append("mensaje", document.getElementById("mensaje").value);
 
-  fetch(
-    "https://script.google.com/macros/s/AKfycbxuwQu13ykhdM5ggnLqechGRhlEAOcx-bkIGhhsAs11S6ByE5yOsaF6Tc2WsLaMdRqL/exec", // Reemplaza con tu Script ID
-    {
-      method: "POST",
-      mode: "no-cors", // Evita los problemas de CORS
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    }
-  )
-    .then(() => {
-      // Ocultar animación de carga
-      document.getElementById("loading-animation").style.display = "none";
+    // Enviar los datos a Google Apps Script
+    fetch(
+      "https://script.google.com/macros/s/AKfycbzqzfxmZoYygKHuE4OB9vwHjM6tClBX-g4WN8W2TvSQEEyXqDbURIxM23Tcl45JqVVxnQ/exec",
+      {
+        method: "POST",
+        body: formData,
+        mode: "no-cors", // Usar no-cors para evitar restricciones de CORS
+      }
+    )
+      .then(() => {
+        // Ocultar la animación de carga y mostrar el mensaje de éxito
+        document.getElementById("loading-animation").style.display = "none";
+        document.getElementById("success-message").style.display = "block";
 
-      // Mostrar mensaje de éxito porque no podemos obtener respuesta con no-cors
-      document.getElementById("success-message").style.display = "block";
+        // Después de 5 segundos, ocultar el mensaje de éxito
+        setTimeout(() => {
+          document.getElementById("success-message").style.display = "none";
+        }, 5000); // El mensaje de éxito se oculta después de 5 segundos
+      })
+      .catch((error) => {
+        // Ocultar la animación de carga y mostrar el mensaje de error
+        document.getElementById("loading-animation").style.display = "none";
+        document.getElementById("error-message").style.display = "block";
+        document.getElementById("error-message").textContent =
+          "Error al enviar: " + error.message;
 
-      // Ocultar el mensaje de éxito después de unos segundos
-      setTimeout(() => {
-        document.getElementById("success-message").style.display = "none";
-      }, 4000);
-    })
-    .catch(() => {
-      // Ocultar animación de carga en caso de error
-      document.getElementById("loading-animation").style.display = "none";
+        console.error("Error al enviar el formulario:", error);
+      });
 
-      // Mostrar mensaje de error
-      document.getElementById("error-message").style.display = "block";
-
-      // Ocultar el mensaje de error después de unos segundos
-      setTimeout(() => {
-        document.getElementById("error-message").style.display = "none";
-      }, 4000);
-    });
-});
+    // Reiniciar el formulario
+    document.getElementById("contactForm").reset();
+  });
