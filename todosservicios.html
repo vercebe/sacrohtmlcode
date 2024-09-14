@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Descriptions</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      h2,
+      h3,
+      h4 {
+        margin: 10px 0;
+      }
+
+      p {
+        font-size: 18px;
+        color: #fff;
+        line-height: 1.8;
+      }
+
+      /* General box for each service section */
+      .service-section {
+        border: 2px solid #333;
+        padding: 20px;
+        margin-bottom: 40px;
+        background-color: #333; /* Black background */
+        border-radius: 15px; /* Rounded corners */
+      }
+
+      /* Sub-section box */
+      .sub-section {
+        border: 1px solid #666;
+        padding: 15px;
+        margin-top: 20px;
+        background-color: #666; /* Gray background */
+        border-radius: 10px; /* Rounded corners */
+      }
+
+      /* Sub-sub-section box */
+      .sub-sub-section {
+        border: 1px dashed #999;
+        padding: 10px;
+        margin-top: 15px;
+        background-color: #888; /* Lighter gray background */
+        border-radius: 10px; /* Rounded corners */
+      }
+
+      h2,
+      h3,
+      h4 {
+        color: #fff;
+      }
+
+      /* Placeholder for image */
+      .image-placeholder {
+        background-color: #fff;
+        border: 2px dashed #888;
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 16px;
+      }
+      /* Estilo general del índice */
+      .index-section {
+        background-color: #222; /* Fondo gris oscuro */
+        padding: 20px;
+        border-radius: 10px; /* Esquinas redondeadas */
+        color: #fff; /* Texto blanco */
+        margin-bottom: 40px;
+        align-content: center;
+        align-items: center;
+      }
+
+      .index-section h2 {
+        color: #ccc; /* Color del título (gris claro) */
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #555; /* Línea debajo del título (gris oscuro) */
+        padding-bottom: 10px;
+      }
+
+      .index-section ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .index-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .index-section ul ul {
+        padding-left: 20px; /* Espaciado para subniveles */
+      }
+
+      .index-section ul li a {
+        text-decoration: none;
+        color: #ccc; /* Color del enlace (gris claro) */
+        font-size: 18px;
+        transition: color 0.3s ease;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .index-section ul li a:hover {
+        background-color: #ccc; /* Fondo gris claro al pasar el cursor */
+        color: #222; /* Cambiar texto a gris oscuro */
+      }
+
+      .index-section ul li a:before {
+        content: "\2022"; /* Añade un punto al inicio del enlace */
+        color: #ccc; /* Punto gris claro */
+        display: inline-block;
+        width: 20px;
+      }
+
+      .index-section ul ul li a:before {
+        content: "\25B8"; /* Flecha para subelementos (gris claro) */
+        color: #ccc;
+      }
+
+      .index-section ul ul ul li a:before {
+        content: "\25AA"; /* Punto pequeño para sub-subelementos */
+        color: #ccc;
+      }
+
+      .index-section ul ul li a:hover:before {
+        color: #222; /* Cambiar el color del ícono en hover */
+      }
+
+      /* Ajustes adicionales */
+      .index-section ul ul li a:hover {
+        background-color: #555; /* Fondo gris oscuro al pasar el cursor en subniveles */
+        color: #fff; /* Texto blanco para contraste */
+      }
+
+      .index-section ul ul ul li a:hover {
+        background-color: #333; /* Fondo aún más oscuro para sub-subniveles */
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="index-section">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li>
+          <a href="#project-management">1. Project Management</a>
+          <ul>
+            <li>
+              <a href="#planning"
+                >1.1 Planning, Coordination, and Resource Control</a
+              >
+              <ul>
+                <li>
+                  <a href="#planning-details">1.1.1 Efficient Workflow</a>
+                </li>
+                <li>
+                  <a href="#resource-management">1.1.2 Resource Management</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#time-management"
+                >1.2 Time, Cost, and Supplier Management</a
+              >
+              <ul>
+                <li><a href="#budget-control">1.2.1 Budget Control</a></li>
+                <li>
+                  <a href="#supplier-coordination"
+                    >1.2.2 Supplier Coordination</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#quality-control">1.3 Supervision and Quality Control</a>
+              <ul>
+                <li>
+                  <a href="#project-supervision">1.3.1 Project Supervision</a>
+                </li>
+                <li>
+                  <a href="#quality-assurance">1.3.2 Quality Assurance</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#site-supervision">2. Site Supervision</a>
+          <ul>
+            <li>
+              <a href="#monitoring"
+                >2.1 Monitoring of Quality and Project Progress</a
+              >
+              <ul>
+                <li>
+                  <a href="#quality-monitoring">2.1.1 Quality Monitoring</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#verification"
+                >2.2 Verification of Compliance with Regulations and Technical
+                Specifications</a
+              >
+              <ul>
+                <li>
+                  <a href="#regulatory-compliance"
+                    >2.2.1 Regulatory Compliance</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#site-safety">3. Site Safety</a>
+          <ul>
+            <li>
+              <a href="#safety-measures"
+                >3.1 Implementation of Occupational Safety Measures</a
+              >
+              <ul>
+                <li><a href="#safety-protocols">3.1.1 Safety Protocols</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#risk-assessment"
+                >3.2 Risk Assessment and Mitigation on Site</a
+              >
+              <ul>
+                <li>
+                  <a href="#risk-assessment-details"
+                    >3.2.1 Hazard Identification</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#worker-inspection">3.3 Safety Inspection for Workers</a>
+              <ul>
+                <li>
+                  <a href="#worker-inspection-details"
+                    >3.3.1 Regular Safety Inspections</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#construction">4. Construction</a>
+          <ul>
+            <li>
+              <a href="#residential-construction"
+                >4.1 Residential Construction</a
+              >
+              <ul>
+                <li>
+                  <a href="#residential-details">4.1.1 Custom Home Building</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#commercial-construction"
+                >4.2 Commercial and Office Construction</a
+              >
+              <ul>
+                <li>
+                  <a href="#commercial-details"
+                    >4.2.1 Office Building Construction</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#industrial-construction">4.3 Industrial Construction</a>
+              <ul>
+                <li>
+                  <a href="#industrial-details"
+                    >4.3.1 Industrial Infrastructure</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#pool-construction"
+                >4.4 Pool and Recreational Area Construction</a
+              >
+              <ul>
+                <li><a href="#pool-details">4.4.1 Custom Pool Design</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#tech-eco">5. Technological and Ecological Solutions</a>
+          <ul>
+            <li>
+              <a href="#smart-home">5.1 Smart Home (Home Automation)</a>
+              <ul>
+                <li>
+                  <a href="#smart-home-details"
+                    >5.1.1 Home Automation Systems</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#ecological-solutions">5.2 Ecological Solutions</a>
+              <ul>
+                <li>
+                  <a href="#ecological-systems"
+                    >5.2.1 Renewable Energy Systems</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#emergency-services">6. 24/7 Emergency Services</a>
+          <ul>
+            <li>
+              <a href="#electrical-services">6.1 Electrical Services</a>
+              <ul>
+                <li>
+                  <a href="#urgent-repairs">6.1.1 Urgent Electrical Repairs</a>
+                </li>
+                <li>
+                  <a href="#energy-restoration"
+                    >6.1.2 Energy and Electrical System Restoration</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#plumbing-services">6.2 Plumbing Services</a>
+              <ul>
+                <li>
+                  <a href="#leak-repair">6.2.1 Leak Repair for Water and Gas</a>
+                </li>
+                <li>
+                  <a href="#unclogging">6.2.2 Unclogging Pipes and Drains</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#consulting">7. Consulting</a>
+          <ul>
+            <li>
+              <a href="#structural-design">7.1 Structural Design Consulting</a>
+              <ul>
+                <li>
+                  <a href="#calculation-design"
+                    >7.1.1 Calculation and Design of Steel and Concrete
+                    Structures</a
+                  >
+                </li>
+                <li>
+                  <a href="#seismic-risk"
+                    >7.1.2 Seismic Risk Assessment and Structural Stability</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#sustainability-consulting"
+                >7.2 Sustainability Consulting</a
+              >
+              <ul>
+                <li>
+                  <a href="#leed"
+                    >7.2.1 Advice on Sustainable Construction (LEED, Passive
+                    House)</a
+                  >
+                </li>
+                <li>
+                  <a href="#resource-optimization"
+                    >7.2.2 Optimization of Energy and Water Resource
+                    Consumption</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#mep-consulting">7.3 MEP Installations Consulting</a>
+              <ul>
+                <li>
+                  <a href="#mep-planning"
+                    >7.3.1 Design and Planning of Mechanical, Electrical, and
+                    Plumbing Systems</a
+                  >
+                </li>
+                <li>
+                  <a href="#energy-efficiency"
+                    >7.3.2 Energy Efficiency Assessment and Smart Solutions</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="#other-services">8. Other Services</a>
+          <ul>
+            <li>
+              <a href="#permits">8.1 Permits and Licensing</a>
+              <ul>
+                <li>
+                  <a href="#permits-licensing">8.1.1 Permit Acquisition</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#waste-management"
+                >8.2 Demolition and Waste Management</a
+              >
+              <ul>
+                <li>
+                  <a href="#waste-removal">8.2.1 Responsible Waste Removal</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <h1>Service Descriptions</h1>
+
+    <!-- Project Management -->
+    <div class="service-section" id="project-management">
+      <h2>1. Project Management</h2>
+
+      <div class="image-placeholder">
+        Image Placeholder (Project Management)
+      </div>
+
+      <p>
+        We specialize in delivering seamless project management services that
+        ensure your vision is realized on time and within budget. Our team is
+        dedicated to handling every detail, from initial planning to final
+        execution, so you can focus on what matters most—growing your business
+        and achieving your goals.
+      </p>
+
+      <!-- Planning, Coordination, and Resource Control -->
+      <div class="sub-section" id="planning">
+        <h3>1.1 Planning, Coordination, and Resource Control</h3>
+
+        <div class="image-placeholder">Image Placeholder (Planning)</div>
+
+        <div class="sub-sub-section" id="planning-details">
+          <h4>1.1.1 Efficient Workflow</h4>
+          <p>
+            We meticulously plan each stage of the project to streamline
+            operations and ensure that resources are utilized efficiently. No
+            delays, no wasted effort—just smooth, consistent progress.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="resource-management">
+          <h4>1.1.2 Resource Management</h4>
+          <p>
+            Our expert team ensures that every resource, from materials to
+            manpower, is effectively managed to maximize efficiency and minimize
+            costs. The result? A project that stays on track and on budget.
+          </p>
+        </div>
+      </div>
+
+      <!-- Time, Cost, and Supplier Management -->
+      <div class="sub-section" id="time-management">
+        <h3>1.2 Time, Cost, and Supplier Management</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Time, Cost Management)
+        </div>
+
+        <div class="sub-sub-section" id="budget-control">
+          <h4>1.2.1 Budget Control</h4>
+          <p>
+            Keeping your project within budget is our top priority. We provide
+            detailed cost tracking and financial management services to ensure
+            that there are no surprises.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="supplier-coordination">
+          <h4>1.2.2 Supplier Coordination</h4>
+          <p>
+            Our long-standing relationships with reliable suppliers allow us to
+            secure the best deals on materials while ensuring timely delivery
+            for uninterrupted workflow.
+          </p>
+        </div>
+      </div>
+
+      <!-- Supervision and Quality Control -->
+      <div class="sub-section" id="quality-control">
+        <h3>1.3 Supervision and Quality Control</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Supervision & Quality Control)
+        </div>
+
+        <div class="sub-sub-section" id="project-supervision">
+          <h4>1.3.1 Project Supervision</h4>
+          <p>
+            Our supervisors are on-site daily to ensure that the work progresses
+            smoothly, any issues are addressed promptly, and that the project
+            stays aligned with your vision.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="quality-assurance">
+          <h4>1.3.2 Quality Assurance</h4>
+          <p>
+            Our strict quality assurance processes mean every detail is
+            carefully monitored to meet the highest standards. We don't just
+            build—we build right.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Supervision -->
+    <div class="service-section" id="site-supervision">
+      <h2>2. Site Supervision</h2>
+
+      <div class="image-placeholder">Image Placeholder (Site Supervision)</div>
+
+      <p>
+        Stay in control of your project’s progress with our site supervision
+        services. We ensure compliance with all safety and regulatory
+        requirements while maintaining high standards of craftsmanship.
+      </p>
+
+      <!-- Monitoring of Quality and Project Progress -->
+      <div class="sub-section" id="monitoring">
+        <h3>2.1 Monitoring of Quality and Project Progress</h3>
+
+        <div class="image-placeholder">Image Placeholder (Monitoring)</div>
+
+        <div class="sub-sub-section" id="quality-monitoring">
+          <h4>2.1.1 Quality Monitoring</h4>
+          <p>
+            We continuously monitor the quality of work being done on-site,
+            ensuring that all tasks are completed to the required standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Verification of Compliance with Regulations and Technical Specifications -->
+      <div class="sub-section" id="verification">
+        <h3>
+          2.2 Verification of Compliance with Regulations and Technical
+          Specifications
+        </h3>
+
+        <div class="image-placeholder">Image Placeholder (Compliance)</div>
+
+        <div class="sub-sub-section" id="regulatory-compliance">
+          <h4>2.2.1 Regulatory Compliance</h4>
+          <p>
+            Our team ensures that your project complies with all relevant
+            regulations and specifications, helping you avoid costly delays or
+            fines.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Site Safety -->
+    <div class="service-section" id="site-safety">
+      <h2>3. Site Safety</h2>
+
+      <div class="image-placeholder">Image Placeholder (Site Safety)</div>
+
+      <p>
+        Safety is not an option—it’s a priority. Our rigorous safety protocols
+        ensure a secure work environment for everyone involved in your project.
+      </p>
+
+      <!-- Implementation of Occupational Safety Measures -->
+      <div class="sub-section" id="safety-measures">
+        <h3>3.1 Implementation of Occupational Safety Measures</h3>
+
+        <div class="image-placeholder">Image Placeholder (Safety Measures)</div>
+
+        <div class="sub-sub-section" id="safety-protocols">
+          <h4>3.1.1 Safety Protocols</h4>
+          <p>
+            We implement comprehensive safety measures to protect workers and
+            ensure that your project meets all occupational health standards.
+          </p>
+        </div>
+      </div>
+
+      <!-- Risk Assessment and Mitigation on Site -->
+      <div class="sub-section" id="risk-assessment">
+        <h3>3.2 Risk Assessment and Mitigation on Site</h3>
+
+        <div class="image-placeholder">Image Placeholder (Risk Assessment)</div>
+
+        <div class="sub-sub-section" id="risk-assessment-details">
+          <h4>3.2.1 Hazard Identification</h4>
+          <p>
+            We proactively identify and mitigate risks before they become
+            issues, ensuring your site remains safe and productive.
+          </p>
+        </div>
+      </div>
+
+      <!-- Safety Inspection for Workers -->
+      <div class="sub-section" id="worker-inspection">
+        <h3>3.3 Safety Inspection for Workers</h3>
+
+        <div class="image-placeholder">Image Placeholder (Worker Safety)</div>
+
+        <div class="sub-sub-section" id="worker-inspection-details">
+          <h4>3.3.1 Regular Safety Inspections</h4>
+          <p>
+            We conduct frequent safety inspections to guarantee that all safety
+            measures are being followed, keeping your workforce protected.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Construction -->
+    <div class="service-section" id="construction">
+      <h2>4. Construction</h2>
+
+      <div class="image-placeholder">Image Placeholder (Construction)</div>
+
+      <p>
+        Whether it's a home, office, or industrial facility, our construction
+        services are designed to bring your vision to life with exceptional
+        craftsmanship and attention to detail.
+      </p>
+
+      <!-- Residential Construction -->
+      <div class="sub-section" id="residential-construction">
+        <h3>4.1 Residential Construction</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Residential Construction)
+        </div>
+
+        <div class="sub-sub-section" id="residential-details">
+          <h4>4.1.1 Custom Home Building</h4>
+          <p>
+            We build custom homes tailored to your specific needs, ensuring a
+            living space that is both functional and aesthetically pleasing.
+          </p>
+        </div>
+      </div>
+
+      <!-- Commercial and Office Construction -->
+      <div class="sub-section" id="commercial-construction">
+        <h3>4.2 Commercial and Office Construction</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Commercial Construction)
+        </div>
+
+        <div class="sub-sub-section" id="commercial-details">
+          <h4>4.2.1 Office Building Construction</h4>
+          <p>
+            We create modern, efficient office spaces designed to enhance
+            productivity and align with your company’s brand and culture.
+          </p>
+        </div>
+      </div>
+
+      <!-- Industrial Construction -->
+      <div class="sub-section" id="industrial-construction">
+        <h3>4.3 Industrial Construction</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Industrial Construction)
+        </div>
+
+        <div class="sub-sub-section" id="industrial-details">
+          <h4>4.3.1 Industrial Infrastructure</h4>
+          <p>
+            Our industrial construction services ensure your facility meets all
+            operational and regulatory requirements, from the ground up.
+          </p>
+        </div>
+      </div>
+
+      <!-- Pool and Recreational Area Construction -->
+      <div class="sub-section" id="pool-construction">
+        <h3>4.4 Pool and Recreational Area Construction</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Pool Construction)
+        </div>
+
+        <div class="sub-sub-section" id="pool-details">
+          <h4>4.4.1 Custom Pool Design</h4>
+          <p>
+            We design and construct custom pools and recreational areas that
+            transform your backyard into a personal oasis.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technological and Ecological Solutions -->
+    <div class="service-section" id="tech-eco">
+      <h2>5. Technological and Ecological Solutions</h2>
+
+      <div class="image-placeholder">
+        Image Placeholder (Tech & Eco Solutions)
+      </div>
+
+      <p>
+        From smart homes to sustainable energy solutions, we implement the
+        latest technologies to create eco-friendly and energy-efficient spaces.
+      </p>
+
+      <!-- Smart Home -->
+      <div class="sub-section" id="smart-home">
+        <h3>5.1 Smart Home (Home Automation)</h3>
+
+        <div class="image-placeholder">Image Placeholder (Smart Home)</div>
+
+        <div class="sub-sub-section" id="smart-home-details">
+          <h4>5.1.1 Home Automation Systems</h4>
+          <p>
+            Our smart home solutions provide you with the ability to control
+            lighting, security, climate, and entertainment from the palm of your
+            hand.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ecological Solutions -->
+      <div class="sub-section" id="ecological-solutions">
+        <h3>5.2 Ecological Solutions</h3>
+
+        <div class="image-placeholder">Image Placeholder (Eco Solutions)</div>
+
+        <div class="sub-sub-section" id="ecological-systems">
+          <h4>5.2.1 Renewable Energy Systems</h4>
+          <p>
+            We integrate renewable energy solutions like solar panels and energy
+            storage systems to reduce your environmental footprint.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 24/7 Emergency Services -->
+    <div class="service-section" id="emergency-services">
+      <h2>6. 24/7 Emergency Services</h2>
+
+      <div class="image-placeholder">
+        Image Placeholder (Emergency Services)
+      </div>
+
+      <p>
+        Day or night, our 24/7 emergency services are ready to tackle urgent
+        electrical and plumbing issues to ensure your home or business stays
+        safe and operational.
+      </p>
+
+      <!-- Electrical Services -->
+      <div class="sub-section" id="electrical-services">
+        <h3>6.1 Electrical Services</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Electrical Services)
+        </div>
+
+        <div class="sub-sub-section" id="urgent-repairs">
+          <h4>6.1.1 Urgent Electrical Repairs</h4>
+          <p>
+            We respond swiftly to electrical emergencies, ensuring your safety
+            and restoring power as quickly as possible.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="energy-restoration">
+          <h4>6.1.2 Energy and Electrical System Restoration</h4>
+          <p>
+            Our team restores energy systems after outages or electrical
+            failures, getting your systems back online in no time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Plumbing Services -->
+      <div class="sub-section" id="plumbing-services">
+        <h3>6.2 Plumbing Services</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Plumbing Services)
+        </div>
+
+        <div class="sub-sub-section" id="leak-repair">
+          <h4>6.2.1 Leak Repair for Water and Gas</h4>
+          <p>
+            We quickly repair leaks in your water or gas systems to prevent
+            damage and ensure the safety of your property.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="unclogging">
+          <h4>6.2.2 Unclogging Pipes and Drains</h4>
+          <p>
+            Our experts efficiently unclog pipes and drains to restore normal
+            water flow and prevent further damage.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Consulting -->
+    <div class="service-section" id="consulting">
+      <h2>7. Consulting</h2>
+
+      <div class="image-placeholder">Image Placeholder (Consulting)</div>
+
+      <p>
+        We provide expert consulting services on structural design,
+        sustainability, and MEP installations to help you build smarter, more
+        efficient structures.
+      </p>
+
+      <!-- Structural Design Consulting -->
+      <div class="sub-section" id="structural-design">
+        <h3>7.1 Structural Design Consulting</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Structural Design)
+        </div>
+
+        <div class="sub-sub-section" id="calculation-design">
+          <h4>7.1.1 Calculation and Design of Steel and Concrete Structures</h4>
+          <p>
+            We offer structural design consulting that ensures the strength,
+            safety, and efficiency of your steel or concrete project.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="seismic-risk">
+          <h4>7.1.2 Seismic Risk Assessment and Structural Stability</h4>
+          <p>
+            Our experts conduct thorough seismic risk assessments to guarantee
+            your structure can withstand the forces of nature.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sustainability Consulting -->
+      <div class="sub-section" id="sustainability-consulting">
+        <h3>7.2 Sustainability Consulting</h3>
+
+        <div class="image-placeholder">Image Placeholder (Sustainability)</div>
+
+        <div class="sub-sub-section" id="leed">
+          <h4>
+            7.2.1 Advice on Sustainable Construction (LEED, Passive House)
+          </h4>
+          <p>
+            We help you achieve your sustainability goals by providing advice on
+            eco-friendly construction methods, including LEED certification and
+            Passive House standards.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="resource-optimization">
+          <h4>7.2.2 Optimization of Energy and Water Resource Consumption</h4>
+          <p>
+            We optimize your building's energy and water consumption, helping
+            you save on operational costs while reducing environmental impact.
+          </p>
+        </div>
+      </div>
+
+      <!-- MEP Installations Consulting -->
+      <div class="sub-section" id="mep-consulting">
+        <h3>7.3 MEP Installations Consulting</h3>
+
+        <div class="image-placeholder">Image Placeholder (MEP Consulting)</div>
+
+        <div class="sub-sub-section" id="mep-planning">
+          <h4>
+            7.3.1 Design and Planning of Mechanical, Electrical, and Plumbing
+            Systems
+          </h4>
+          <p>
+            We design and plan efficient MEP systems that maximize energy
+            performance while minimizing operational costs.
+          </p>
+        </div>
+        <div class="sub-sub-section" id="energy-efficiency">
+          <h4>7.3.2 Energy Efficiency Assessment and Smart Solutions</h4>
+          <p>
+            We assess energy efficiency and integrate smart solutions that
+            enhance the functionality of your building.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Other Services -->
+    <div class="service-section" id="other-services">
+      <h2>8. Other Services</h2>
+
+      <div class="image-placeholder">Image Placeholder (Other Services)</div>
+
+      <p>
+        We offer a range of additional services, from acquiring necessary
+        permits to handling waste management, ensuring your project runs
+        smoothly from start to finish.
+      </p>
+
+      <!-- Permits and Licensing -->
+      <div class="sub-section" id="permits">
+        <h3>8.1 Permits and Licensing</h3>
+
+        <div class="image-placeholder">Image Placeholder (Permits)</div>
+
+        <div class="sub-sub-section" id="permits-licensing">
+          <h4>8.1.1 Permit Acquisition</h4>
+          <p>
+            We assist in obtaining all necessary permits and licenses, ensuring
+            that your project is fully compliant with local laws and
+            regulations.
+          </p>
+        </div>
+      </div>
+
+      <!-- Waste Management -->
+      <div class="sub-section" id="waste-management">
+        <h3>8.2 Demolition and Waste Management</h3>
+
+        <div class="image-placeholder">
+          Image Placeholder (Waste Management)
+        </div>
+
+        <div class="sub-sub-section" id="waste-removal">
+          <h4>8.2.1 Responsible Waste Removal</h4>
+          <p>
+            Our waste management services ensure that all construction debris is
+            responsibly removed and recycled, keeping your site clean and
+            environmentally friendly.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p><a href="index.html">Back to Services Page</a></p>
+  </body>
+</html>

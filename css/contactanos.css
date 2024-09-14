@@ -7,7 +7,7 @@
   position: relative;
   z-index: 1;
   margin-top: -50px;
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  width: 100%;
   font-family: "Wix Madefor Display", sans-serif;
   box-sizing: border-box;
 }
@@ -19,24 +19,24 @@
   width: 100%;
   height: 500px;
   position: relative;
-  transform: skewY(-5deg); /* Mantener diagonal */
+  transform: skewY(-5deg);
   margin-top: -150px;
   z-index: 3;
   overflow: hidden;
-  box-sizing: border-box; /* Asegurar que márgenes se respeten */
+  box-sizing: border-box;
 }
 
 /* Estilo del contenido dentro de la franja */
 .location-info {
   display: flex;
-  justify-content: space-around; /* Distribuye el espacio uniformemente */
+  justify-content: space-around;
   flex-wrap: wrap;
   background-color: #000000;
-  padding: 0 10%; /* Agrega márgenes laterales para centrar el contenido */
+  padding: 0 10%;
   transform: skewY(5deg);
   position: relative;
   z-index: 4;
-  box-sizing: border-box; /* Asegurar que los márgenes funcionen */
+  box-sizing: border-box;
   color: #ffffff;
   margin-top: 50px;
 }
@@ -57,11 +57,11 @@
 .location {
   padding: 10px;
   flex: 1;
-  min-width: 200px; /* Ajustar el mínimo para pantallas pequeñas */
-  text-align: center; /* Centramos todo el contenido */
+  min-width: 200px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centrar todo en el eje vertical */
+  align-items: center;
 }
 
 .location h2 {
@@ -70,8 +70,8 @@
 }
 
 .location p {
-  margin-bottom: 5px; /* Reducir el espacio entre las líneas de la dirección */
-  line-height: 0; /* Ajustar la altura de línea para reducir el espacio */
+  margin-bottom: 5px;
+  line-height: 0;
 }
 
 .location .btn-map {
@@ -149,6 +149,7 @@
   color: #ffffff;
   z-index: 6;
 }
+
 /* Contenedor del formulario */
 .contact-form-container {
   background-color: white;
@@ -160,12 +161,12 @@
 }
 
 .container {
-  width: 100%; /* Ajustar el ancho */
-  margin: 0 auto; /* Centrar el contenedor */
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 0 10%; /* Márgenes laterales para centrar */
+  padding: 0 10%;
   box-sizing: border-box;
 }
 
@@ -181,10 +182,9 @@
   color: #1a1a1a;
 }
 
-/* Eliminar la separación entre líneas de la dirección */
 .left-content p {
   margin: 0;
-  line-height: 1.2; /* Reduce el espacio entre línea superior y código postal */
+  line-height: 1.2;
 }
 
 .info-block {
@@ -199,13 +199,13 @@
 }
 
 .hour {
-  text-align: center; /* Centrar el "Our working hour" */
+  text-align: center;
   padding-bottom: 10px;
 }
 
 .hours {
   display: flex;
-  justify-content: center; /* Distribuye los días y horas */
+  justify-content: center;
 }
 
 .days p,
@@ -230,9 +230,9 @@
   background-color: white;
   border-radius: 10px;
   margin-bottom: 140px;
-  min-width: 520px; /* Limitar el ancho del formulario */
+  max-width: 500px;
   margin: 0 auto;
-  padding-bottom: 70px;
+  padding-bottom: 30px;
 }
 
 .contact-form h1 {
@@ -242,7 +242,6 @@
 
 .contact-form .form-group {
   margin-bottom: 15px;
-  min-width: none;
 }
 
 .contact-form input,
@@ -253,17 +252,19 @@
   border-radius: 5px;
   background-color: #ffffff;
   color: #000000;
+  box-sizing: border-box;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
   color: #aaaaaa;
+  font-size: 16px; /* Asegura que todos los placeholders tengan el mismo tamaño de fuente */
 }
 
+/* Estilo específico para el campo de texto (textarea) */
 .contact-form textarea {
   height: 100px;
-  width: 100%;
-  max-width: 500px;
+  resize: none; /* Desactiva el redimensionado manual */
 }
 
 .contact-form .btn-submit {
@@ -284,7 +285,7 @@
 }
 
 #contact-email {
-  margin-left: -70px; /* Mueve el correo hacia la izquierda */
+  margin-left: -70px;
 }
 
 .info-blocksmall-screen-hours {
@@ -294,6 +295,44 @@
 .logoq {
   padding-bottom: 40px;
 }
+
+.center-content {
+  text-align: center;
+}
+
+/* Estilo para el enlace de teléfono clicable */
+.clickable-phone {
+  color: #1c4169;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.clickable-phone i {
+  margin-right: 8px;
+}
+
+/* Estilo para el enlace de correo clicable */
+.clickable-email {
+  color: #1c4169;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.clickable-email i {
+  margin-right: 8px;
+}
+
+/* Efecto hover para el teléfono y correo */
+.clickable-phone:hover,
+.clickable-email:hover {
+  text-decoration: underline;
+  color: #6cabf0;
+}
+
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 890px) {
   .parallax-image1 {
@@ -303,22 +342,23 @@
   }
 
   .slogan1 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #slogan2 {
-    font-size: 25px;
+    font-size: 20px;
   }
+
   #slogan3 {
     font-size: 18px;
-    white-space: nowrap; /* Impide que el texto se parta */
-    overflow: hidden; /* Evita que el contenido desborde */
-    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     width: 100%;
     margin: 0;
     padding: 0;
     display: block;
-    text-align: center; /* Asegura que el texto esté centrado */
+    text-align: center;
   }
 
   #Direccion {
@@ -335,7 +375,7 @@
 
   .location-info {
     transform: none;
-    padding: 0 5%; /* Ajustar el padding para centrado en pantallas pequeñas */
+    padding: 0 5%;
   }
 
   .contact-section {
@@ -360,8 +400,6 @@
     text-align: center;
   }
 
-  /* Cambios para Our working hour en columnas */
-
   .hour1 {
     text-align: center;
     padding-bottom: 5px;
@@ -373,7 +411,7 @@
   }
 
   .contact-form {
-    max-width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+    max-width: 90%;
     margin: 0 auto;
   }
 
@@ -407,18 +445,19 @@
     display: block;
   }
 }
+
 /* Ajustes para pantallas medianas */
 @media (max-width: 1240px) and (min-width: 891px) {
-  /* Formulario de contacto a la derecha */
   .contact-form {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     margin-bottom: 140px;
-    max-width: 280px; /* Limitar el ancho del formulario */
+    max-width: 280px;
     margin: 0;
     padding-bottom: 70px;
     width: 200px;
   }
+
   .contact-form {
     width: 230px;
     min-width: 0;
@@ -429,6 +468,7 @@
     min-width: 0;
     height: 80px;
   }
+
   .days {
     padding-right: 15px;
     text-align: left;
