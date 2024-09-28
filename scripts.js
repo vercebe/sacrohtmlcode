@@ -254,15 +254,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Smooth scroll para enlaces de navegación
   menuLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
-      e.preventDefault();
       const targetID = this.getAttribute("href");
-      const targetSection = document.querySelector(targetID);
+      if (targetID.startsWith("#")) {
+        e.preventDefault();
+        const targetSection = document.querySelector(targetID);
 
-      if (targetSection) {
-        window.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: "smooth",
-        });
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: "smooth",
+          });
+        }
       }
     });
   });
@@ -287,7 +289,7 @@ window.addEventListener("load", function () {
   }, 3500);
 });
 
-//activar leer más pantallas pequeñas
+// Activar "Leer más" en pantallas pequeñas
 function toggleText(button) {
   const parent = button.parentElement;
   const shortText = parent.querySelector(".text-short");
@@ -304,7 +306,7 @@ function toggleText(button) {
   }
 }
 
-//submenus servicios
+// Submenús de servicios
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".sub-menu").forEach((submenu) => {
     submenu.style.display = "none";
@@ -410,7 +412,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-//indicador scroll
+
+// Indicador de scroll
 document.addEventListener("DOMContentLoaded", function () {
   const scrollIndicator = document.getElementById("scroll-indicator");
   let isScrolling;
@@ -509,7 +512,7 @@ document.addEventListener("DOMContentLoaded", function () {
   startIdleTimer(); // Iniciar temporizador de inactividad cuando se carga la página
 });
 
-//efecto zoom
+// Efecto zoom
 window.addEventListener("scroll", function () {
   const scrollPos = window.pageYOffset;
 
@@ -519,7 +522,7 @@ window.addEventListener("scroll", function () {
   sloganText.style.transform = `scale(${zoomInFactor})`;
 });
 
-//correo
+// Envío del formulario de contacto
 document
   .getElementById("contactForm")
   .addEventListener("submit", function (event) {
