@@ -8,11 +8,34 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.classList.toggle("show");
   });
 
-  // Cerrar el menú al hacer clic en cualquier enlace del menú
+  // Obtener todos los enlaces del menú
   const menuLinks = document.querySelectorAll(".navbar ul li a");
+
+  // Añadir evento de clic a cada enlace del menú
   menuLinks.forEach((link) => {
-    link.addEventListener("click", function () {
-      navLinks.classList.remove("show");
+    link.addEventListener("click", function (e) {
+      const targetHref = this.getAttribute("href");
+
+      // Verificar si el enlace es interno (ancla que comienza con '#')
+      if (targetHref.startsWith("#")) {
+        e.preventDefault(); // Prevenir comportamiento por defecto solo en enlaces internos
+
+        // Cerrar el menú
+        navLinks.classList.remove("show");
+
+        // Realizar scroll suave a la sección objetivo
+        const targetSection = document.querySelector(targetHref);
+        if (targetSection) {
+          window.scrollTo({
+            top: targetSection.offsetTop,
+            behavior: "smooth",
+          });
+        }
+      } else {
+        // Para enlaces externos, cerrar el menú y permitir la navegación normal
+        navLinks.classList.remove("show");
+        // No prevenir la acción por defecto
+      }
     });
   });
 
@@ -90,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const limit = parallaxContainer.offsetTop + parallaxContainer.offsetHeight;
 
     if (scrolled > parallaxContainer.offsetTop && scrolled <= limit) {
-      const parallaxSpeed = window.innerWidth < 768 ? 0.1 : 0.1;
+      const parallaxSpeed = 0.1;
       parallaxContainer.style.backgroundPositionY = `${
         (scrolled - parallaxContainer.offsetTop) * parallaxSpeed
       }%`;
@@ -250,24 +273,6 @@ document.addEventListener("DOMContentLoaded", function () {
   if (emailInputContactanos) {
     applyEmailAutocomplete(emailInputContactanos);
   }
-
-  // Smooth scroll para enlaces de navegación
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", function (e) {
-      const targetID = this.getAttribute("href");
-      if (targetID.startsWith("#")) {
-        e.preventDefault();
-        const targetSection = document.querySelector(targetID);
-
-        if (targetSection) {
-          window.scrollTo({
-            top: targetSection.offsetTop,
-            behavior: "smooth",
-          });
-        }
-      }
-    });
-  });
 
   // Mostrar slogan en pantallas pequeñas después de 4 segundos
   setTimeout(function () {
