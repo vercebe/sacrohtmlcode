@@ -43,7 +43,6 @@ header {
   display: flex;
   justify-content: flex-end; /* Empuja el menú de navegación hacia la derecha */
   align-items: center;
-  font-family: "Playfair Display", serif;
   font-size: 18px;
   margin-top: 15px;
   margin-right: 15px;
