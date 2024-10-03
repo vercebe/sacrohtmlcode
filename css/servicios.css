@@ -334,7 +334,7 @@
 }
 
 /* Ajustes para pantallas medianas entre 891px y 1140px */
-@media (min-width: 891px) and (max-width: 1140px) {
+@media (min-width: 891px) and (max-width: 1206px) {
   .service-row {
     display: flex;
     flex-wrap: wrap; /* Permite que las cajas se organicen en varias filas */
