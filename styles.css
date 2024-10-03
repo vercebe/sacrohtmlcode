@@ -19,7 +19,7 @@ html {
 /* Estilos generales del cuerpo de la página */
 html,
 body {
-  font-family: "Roboto", sans-serif; /* Fuente de texto principal */
+  font-family: "Oswald", sans-serif;
   margin: 0px; /* Elimina los márgenes por defecto */
   padding: 0px; /* Elimina el padding por defecto */
   background-color: #ffffff; /* Color de fondo blanco */
