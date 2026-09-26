@@ -1,12 +1,12 @@
 /* Estilos para la pestaña de WhatsApp */
 .whatsapp-tab {
   position: fixed; /* Fijada en la pantalla */
-  bottom: 65px; /* Alineada a 65px desde la parte inferior */
-  right: 0; /* Alineada al borde derecho */
+  bottom: 15px; /* [FIX] separado 15px del borde inferior */
+  right: 15px; /* [FIX] separado 15px del borde derecho */
   width: 60px; /* Ancho inicial de la pestaña */
   height: 60px; /* Altura inicial de la pestaña */
   background-color: rgba(37, 211, 101, 0.658); /* Color verde de WhatsApp */
-  border-radius: 10px 10px 0 0; /* Bordes redondeados en las esquinas superiores */
+  border-radius: 12px; /* [FIX] botón flotante: redondeado en las 4 esquinas */
   backdrop-filter: blur(5px); /* Aplica un efecto de desenfoque al fondo */
   -webkit-backdrop-filter: blur(
     5px
@@ -21,7 +21,7 @@
   transition: width 0.5s ease, height 0.5s ease; /* Transición suave en cambios de tamaño */
   overflow: hidden; /* Oculta el contenido que se desborda */
   padding-left: 10px; /* Espacio a la izquierda de 10px */
-  animation: bounceInLeft 1s ease; /* Animación de rebote desde la derecha */
+  animation: wa-attention 60s ease-in-out infinite; /* [FIX] rebote de atención cada 1 min */
 }
 
 /* Contenido del WhatsApp */
@@ -60,7 +60,7 @@
 .whatsapp-tab:hover {
   width: 200px; /* Aumenta el ancho a 200px al pasar el ratón */
   height: 100px; /* Aumenta la altura a 100px al pasar el ratón */
-  border-radius: 10px 10px 0 0; /* Mantiene los bordes redondeados superiores */
+  border-radius: 12px;
 }
 
 /* Estilo del texto dentro del WhatsApp */
@@ -89,20 +89,13 @@
   color: #25d366;
 }
 
-/* Animación de rebote (bounceInLeft) para la pestaña de WhatsApp */
-@keyframes bounceInLeft {
-  0% {
-    transform: translateX(
-      100%
-    ); /* Inicia fuera de la pantalla desde la derecha */
-  }
-  60% {
-    transform: translateX(-30px); /* Rebota hacia adentro */
-  }
-  80% {
-    transform: translateX(10px); /* Rebota hacia atrás */
-  }
-  100% {
-    transform: translateX(0); /* Se posiciona en su lugar final */
-  }
+/* [FIX] Rebote de atención cada 1 minuto: salta en el primer ~7% del ciclo (≈4s de 60s),
+   luego queda quieto hasta el próximo minuto. Rebota también al cargar. */
+@keyframes wa-attention {
+  0% { transform: translateY(0); }
+  3% { transform: translateY(-16px); }
+  6% { transform: translateY(0); }
+  9% { transform: translateY(-8px); }
+  12% { transform: translateY(0); }
+  100% { transform: translateY(0); }
 }

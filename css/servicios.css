@@ -230,75 +230,88 @@
   margin-top: 50px;
 }
 .marquee-text {
-  width: 100vw;
+  width: 100%; /* 100% (no 100vw: evita scroll horizontal por el scrollbar) */
   overflow: hidden;
   white-space: nowrap;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: center; /* [FIX] sin justify-content:center: ahora el contenido se desplaza */
   border-top: 2px solid rgba(255, 255, 255, 0.5);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   padding: 15px 0;
   color: #ffffff;
   text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.3); /* Resplandor suave */
   font-size: 20px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Resplandor en las imágenes */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
   margin-bottom: 20px; /* Separación con el slider de imágenes */
 }
 
-.marquee-text span {
-  display: inline-block;
-  animation: marquee-text-scroll 560s linear infinite; /* Animación de desplazamiento de texto */
+/* [FIX] contenedor con las DOS copias del texto: al mover -50% (una copia), la 2ª ocupa el
+   lugar de la 1ª -> loop SIN hueco. clamp de duración = velocidad estable. */
+.marquee-content {
+  display: flex;
+  flex: 0 0 auto;
+  animation: marquee-loop 320s linear infinite; /* lento/legible (el texto es largo). Sube el nº = más lento */
+  will-change: transform; /* usa GPU -> más fluido, menos tropicones */
 }
 
-@keyframes marquee-text-scroll {
-  0% {
-    transform: translateX(100%);
+.marquee-text span {
+  flex: 0 0 auto;
+  padding-right: 4rem; /* separación entre el fin de una copia y el inicio de la otra */
+}
+
+@keyframes marquee-loop {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-50%); /* -50% = ancho de UNA copia (el contenedor tiene 2) */
   }
 }
 
 /* Carrusel de imágenes */
 .slider {
-  height: 250px; /* Ajustado para el título */
-  margin: 0 auto; /* Para centrar */
+  /* [FIX] variables: la costura del loop y el ancho se calculan SIEMPRE del mismo valor
+     -> escala a la pantalla sin dejar huecos. --n = nº de imágenes ÚNICAS (7); se duplican en el HTML. */
+  --slide-w: clamp(150px, 20vw, 260px); /* tamaño que se ajusta a la pantalla */
+  --gap: 5px;
+  --n: 7;      /* imágenes ÚNICAS */
+  --sets: 4;   /* copias del set en el HTML (4×7=28). >=3 evita el hueco en pantallas anchas */
+  height: var(--slide-w); /* alto = ancho de la imagen (cuadrada) */
   overflow: hidden;
   position: relative;
-  width: 100vw; /* Ajustado para que ocupe todo el ancho de la pantalla */
-  margin: 0%;
+  width: 100%; /* 100% (no 100vw, que causa scroll horizontal por el scrollbar) */
+  margin: 0;
 }
 
 .slide-track {
   animation: scroll-images 40s linear infinite; /* Animación de desplazamiento de imágenes */
   display: flex;
-  overflow-x: hidden; /* Evita el desbordamiento horizontal */
-  width: calc((250px + 5px) * 14); /* Ajustado para 14 imágenes */
+  width: calc((var(--slide-w) + var(--gap)) * var(--n) * var(--sets)); /* pista = sets copias */
+  will-change: transform; /* usa GPU -> desplazamiento más fluido, menos tropicones */
 }
 
 @keyframes scroll-images {
-  /* Animación para el carrusel de imágenes */
-  0% {
+  /* Se desplaza EXACTAMENTE un set (7 imágenes) -> al reiniciar coincide con el duplicado = sin hueco */
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(calc((-250px - 5px) * 7));
+  to {
+    transform: translateX(calc((var(--slide-w) + var(--gap)) * var(--n) * -1));
   }
 }
 
 .slide {
   position: relative;
-  display: inline-block;
+  flex: 0 0 var(--slide-w); /* ancho fijo por variable, no se encoge */
   text-align: center;
-  margin-left: 5px;
+  margin-left: var(--gap);
 }
 
 /* Estilo de las imágenes */
 .slide img {
-  width: 250px; /* Ancho de la imagen */
-  height: 250px; /* Alto de la imagen */
-  object-fit: fill; /* Asegura que las imágenes se ajusten sin deformarse */
+  width: var(--slide-w);
+  height: var(--slide-w);
+  object-fit: cover; /* [FIX] cover en vez de fill: llena el cuadro SIN deformar la imagen */
   display: block;
 }
 

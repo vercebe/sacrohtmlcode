@@ -2,10 +2,17 @@
 .video {
   position: relative; /* Cambiar de fixed a relative para que no bloquee el scroll */
   width: 100%;
-  height: auto; /* Asegura que el video ocupe su espacio pero permita el scroll del body */
+  height: 100vh; /* [FIX] altura fija del hero: NO depende de que el video cargue (antes: auto -> colapsaba si el video no carga, ej. Opera, y los slogans se solapaban con Our Services) */
+  min-height: 100vh;
   background-color: #000;
   overflow: hidden;
   z-index: 0;
+}
+
+/* [FIX] el contenedor intermedio debe llenar el hero para que el video ocupe el alto */
+.video .video-container {
+  width: 100%;
+  height: 100%;
 }
 
 .video video {
