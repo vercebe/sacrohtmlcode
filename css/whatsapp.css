@@ -21,7 +21,9 @@
   transition: width 0.5s ease, height 0.5s ease; /* Transición suave en cambios de tamaño */
   overflow: hidden; /* Oculta el contenido que se desborda */
   padding-left: 10px; /* Espacio a la izquierda de 10px */
-  animation: wa-attention 60s ease-in-out infinite; /* [FIX] rebote de atención cada 1 min */
+  /* [FIX] la animación NO va aquí: el botón arranca oculto (.hidden) y el JS lo revela a los ~3.5s
+     con la clase .delayed-appearance. La animación se dispara en esa clase (ver abajo) para que el
+     rebote se vea AL APARECER, no al cargar la página (antes corría oculto y no se notaba). */
 }
 
 /* Contenido del WhatsApp */
@@ -89,13 +91,29 @@
   color: #25d366;
 }
 
-/* [FIX] Rebote de atención cada 1 minuto: salta en el primer ~7% del ciclo (≈4s de 60s),
-   luego queda quieto hasta el próximo minuto. Rebota también al cargar. */
+/* [FIX] La animación se dispara cuando el JS agrega .delayed-appearance (el botón aparece a los ~3.5s).
+   Así el rebote se ve AL APARECER, en su tamaño CERRADO. El fade-in lo hace el transition de .delayed-appearance. */
+.whatsapp-tab.delayed-appearance {
+  animation: wa-intro 2.6s ease-in-out 1, wa-attention 60s ease-in-out infinite 2.6s;
+}
+
+/* al aparecer: 3 rebotes SUAVES y escalados (corto -> más alto -> el más alto). Sin scale (queda cerrado). */
+@keyframes wa-intro {
+  0%   { transform: translateY(0);    }
+  17%  { transform: translateY(-10px); }   /* rebote 1: corto */
+  34%  { transform: translateY(0);    }
+  55%  { transform: translateY(-20px); }   /* rebote 2: más alto */
+  72%  { transform: translateY(0);    }
+  88%  { transform: translateY(-30px); }   /* rebote 3: el más alto */
+  100% { transform: translateY(0);    }
+}
+
+/* [FIX] Rebote de atención 1 vez por minuto: quieto el 90% del ciclo (~54s),
+   rebota NOTABLE en el último ~6s. En rest durante el arranque (para no chocar con wa-intro). */
 @keyframes wa-attention {
-  0% { transform: translateY(0); }
-  3% { transform: translateY(-16px); }
-  6% { transform: translateY(0); }
-  9% { transform: translateY(-8px); }
-  12% { transform: translateY(0); }
-  100% { transform: translateY(0); }
+  0%, 90%, 100% { transform: translateY(0) scale(1); }
+  93% { transform: translateY(-28px) scale(1.08); }
+  96% { transform: translateY(0) scale(1); }
+  98% { transform: translateY(-13px) scale(1.04); }
+  99% { transform: translateY(0) scale(1); }
 }

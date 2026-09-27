@@ -316,13 +316,18 @@
 }
 
 .caption {
+  /* [FIX] badge DISCRETO que abraza el texto (pastilla), centrado abajo — no barra completa */
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-  font-size: 14px;
-  text-align: center;
-  padding: 2px 0;
+  font-size: 13px;
+  white-space: nowrap;
+  padding: 3px 10px;                    /* un poco de espacio alrededor de las letras */
+  background: rgba(0, 0, 0, 0.45);      /* fondo oscuro suave */
+  border-radius: 999px;                 /* pastilla redondeada */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
 }
 
 /* Adaptación para pantallas pequeñas */
