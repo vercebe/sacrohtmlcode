@@ -93,7 +93,7 @@
 /* Efecto parallax */
 .parallax-image1 {
   height: 1000px;
-  background-image: url("../assets/servicioslider/bombilla2.jpg");
+  background-image: url("../assets/servicioslider/bombilla2.webp");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -336,7 +336,7 @@
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 890px) {
   .parallax-image1 {
-    background-image: url("/assets/servicioslider/bombilla2small.jpg");
+    background-image: url("/assets/servicioslider/bombilla2small.webp");
     background-size: cover;
     height: 800px;
   }

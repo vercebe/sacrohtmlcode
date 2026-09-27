@@ -1,7 +1,7 @@
 /* Efecto de fondo con desplazamiento */
 .wrapper {
   animation: scroll-background 100s linear infinite; /* Anima el fondo para desplazarse continuamente */
-  background: url("../assets/woodfondo.png") #111111; /* Imagen de fondo y color de respaldo */
+  background: url("../assets/woodfondo.webp") #111111; /* Imagen de fondo y color de respaldo */
   background-size: cover; /* El fondo cubre toda la pantalla */
   background-position: center center; /* El fondo se centra */
   background-repeat: no-repeat; /* Evita que el fondo se repita */
