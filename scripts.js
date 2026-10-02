@@ -1,3 +1,19 @@
+// Al volver al inicio desde otra página del sitio (en la misma pestaña): sin la entrada animada ni el formulario
+// emergente, y en el mismo punto donde estaba. La primera vez en la pestaña, todo igual que siempre.
+let sacroVolviendo = false;
+try {
+  sacroVolviendo = sessionStorage.getItem("sacro_visto") === "1";
+  sessionStorage.setItem("sacro_visto", "1");
+} catch (e) { /* navegación privada: se comporta como primera vez */ }
+const sacroEsInicio = /(^\/$|index\.html$)/.test(location.pathname);
+if (sacroVolviendo && sacroEsInicio) document.documentElement.classList.add("volviendo");
+// guarda dónde estaba en el inicio al irse, para volver al mismo punto
+if (sacroEsInicio) {
+  window.addEventListener("pagehide", function () {
+    try { sessionStorage.setItem("sacro_scroll", String(window.scrollY)); } catch (e) {}
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   // Manejo del menú hamburguesa
   const menuIcon = document.getElementById("menu-icon");
@@ -84,14 +100,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Inicialmente ocultar los eslóganes
+  // Inicialmente ocultar los eslóganes (al volver, se muestran de una vez)
   const sloganContainer = document.querySelector(".slogan-container");
-  sloganContainer.style.display = "none";
+  if (sloganContainer && sacroVolviendo) {
+    sloganContainer.style.display = "block";
+    sloganContainer.classList.add("delayed-appearance");
+  } else if (sloganContainer) sloganContainer.style.display = "none";
 
   // Mostrar eslóganes después de que el formulario se haya mostrado completamente
   const formContainer = document.querySelector(".form-container");
 
-  if (formContainer) {
+  if (sacroVolviendo) {
+    /* ya visibles */
+  } else if (formContainer) {
     formContainer.addEventListener("transitionend", function () {
       setTimeout(function () {
         sloganContainer.style.display = "block";
@@ -286,11 +307,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 window.addEventListener("load", function () {
+  const mostrar = (sel) => document.querySelector(sel)?.classList.add("delayed-appearance");
+  if (sacroVolviendo) {
+    mostrar("header");
+    mostrar("footer");
+    mostrar(".whatsapp-tab");
+    const form = document.getElementById("form");
+    if (form) form.style.display = "none";   // sin formulario emergente al volver
+    if (sacroEsInicio && !location.hash) {
+      const y = Number(sessionStorage.getItem("sacro_scroll") || 0);
+      if (y > 0) window.scrollTo({ top: y, behavior: "instant" });
+    }
+    return;
+  }
   setTimeout(function () {
-    document.querySelector("header").classList.add("delayed-appearance");
-    document.querySelector("footer").classList.add("delayed-appearance");
-    document.querySelector(".whatsapp-tab").classList.add("delayed-appearance");
-    document.querySelector(".form-popup").classList.add("delayed-appearance");
+    mostrar("header");
+    mostrar("footer");
+    mostrar(".whatsapp-tab");
+    mostrar(".form-popup");
   }, 3500);
 });
 

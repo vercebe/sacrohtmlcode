@@ -32,3 +32,11 @@ section {
   border-radius: 0 !important; /* Asegura que las esquinas sean cuadradas */
   width: 100%;
 }
+
+/* Al volver al inicio desde otra página del sitio: sin transiciones de entrada (todo aparece de una vez) */
+.volviendo header,
+.volviendo footer,
+.volviendo .whatsapp-tab,
+.volviendo .slogan-container {
+  transition: none !important;
+}

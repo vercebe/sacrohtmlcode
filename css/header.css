@@ -16,6 +16,14 @@ header {
   color: #fff;
 }
 
+/* Misma fuente del encabezado en todas las páginas (el inicio la heredaba del body) */
+header,
+header .company-name,
+header .navbar,
+header .navbar a {
+  font-family: "Oswald", sans-serif;
+}
+
 /* Componente: Logo */
 .logo {
   position: relative;
