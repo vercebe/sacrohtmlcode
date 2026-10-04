@@ -1284,3 +1284,20 @@ body {
     margin-top: 10px; /* Reducir margen superior en pantallas pequeñas */
   }
 }
+
+/* Parpadeo cada 5 s: un destello corto (~1,2 s) y luego quieto hasta completar los 5 s.
+   Reemplaza los ciclos de 1–1,5 s de arriba, que parpadeaban sin parar. */
+@keyframes p5-grow { 0%, 24%, 100% { transform: scale(1); } 12% { transform: scale(1.15); } }
+@keyframes p5-pulse { 0%, 24%, 100% { transform: scale(1); } 12% { transform: scale(1.05); } }
+@keyframes p5-borde-rojo { 0%, 24%, 100% { border-color: #ff3333; } 12% { border-color: #ff9900; } }
+@keyframes p5-borde-blanco { 0%, 24%, 100% { border-color: #ffffff; } 12% { border-color: #00ff15; } }
+@keyframes p5-borde-gris { 0%, 24%, 100% { border-color: #555555; } 12% { border-color: #888; } }
+@keyframes p5-color-now { 0%, 24%, 100% { color: #242323; } 12% { color: #ffffff; } }
+@keyframes p5-color-wa { 0%, 24%, 100% { color: #25d366; } 12% { color: #ffffff; } }
+
+.hero-content h1 { animation: p5-pulse 5s ease-in-out infinite; }
+.quote-btn { animation: p5-borde-rojo 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
+.now-text { animation: p5-color-now 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
+.whatsapp-link { animation: p5-color-wa 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite, p5-borde-blanco 5s ease-in-out infinite; }
+.tips-btn { animation: p5-borde-gris 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
+.clickable-phone { animation: p5-grow 5s ease-in-out infinite; }

@@ -208,3 +208,9 @@ header .navbar a {
     font-size: 14px; /* Asegura que el nombre de la empresa no se rompa */
   }
 }
+
+/* Página actual en el menú (p. ej. «Water Mitigation» estando en esa página) */
+.navbar ul li a[aria-current="page"] {
+  border-bottom: 2px solid #ffffff;
+  border-radius: 0;
+}

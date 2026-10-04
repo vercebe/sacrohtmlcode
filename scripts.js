@@ -2,7 +2,10 @@
 // emergente, y en el mismo punto donde estaba. La primera vez en la pestaña, todo igual que siempre.
 let sacroVolviendo = false;
 try {
-  sacroVolviendo = sessionStorage.getItem("sacro_visto") === "1";
+  // Recargar (F5) cuenta como primera vez: vuelve la transición y el formulario
+  const nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+  const recargo = nav ? nav.type === "reload" : performance.navigation && performance.navigation.type === 1;
+  sacroVolviendo = !recargo && sessionStorage.getItem("sacro_visto") === "1";
   sessionStorage.setItem("sacro_visto", "1");
 } catch (e) { /* navegación privada: se comporta como primera vez */ }
 const sacroEsInicio = /(^\/$|index\.html$)/.test(location.pathname);

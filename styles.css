@@ -40,3 +40,10 @@ section {
 .volviendo .slogan-container {
   transition: none !important;
 }
+
+/* Al llegar a una sección desde otra página (index.html#Conocenos…), que el encabezado fijo no tape su título */
+#Servicios,
+#Conocenos,
+#Contactanos {
+  scroll-margin-top: 80px;
+}
