@@ -177,7 +177,7 @@
   box-sizing: border-box;
 }
 
-.left-content h1,
+.left-content :is(h1, .tam-h1),
 .left-content p {
   color: #1a1a1a;
 }
@@ -235,7 +235,7 @@
   padding-bottom: 30px;
 }
 
-.contact-form h1 {
+.contact-form :is(h1, .tam-h1) {
   text-align: center;
   color: #1a1a1a;
 }

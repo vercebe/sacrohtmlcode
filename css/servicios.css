@@ -50,7 +50,7 @@
 }
 
 /* Título de la sección */
-#Servicios h1 {
+#Servicios :is(h1, .tam-h1) {
   font-size: 45px;
   font-weight: bold;
   display: flex;
@@ -342,7 +342,7 @@
     margin-bottom: 10px;
   }
 
-  #Servicios h1 {
+  #Servicios :is(h1, .tam-h1) {
     font-size: 2.5rem;
   }
 

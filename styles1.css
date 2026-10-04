@@ -377,7 +377,7 @@ svg.social-icon {
   height: 350 px;
 }
 
-.hero-content h1 {
+.hero-content :is(h1, .tam-h1) {
   font-size: 2.5rem;
   margin-bottom: 20px;
   animation: pulse 1.5s infinite;
@@ -923,7 +923,7 @@ svg.social-icon {
   box-sizing: border-box;
 }
 
-.left-content h1,
+.left-content :is(h1, .tam-h1),
 .left-content p {
   color: #1a1a1a;
 }
@@ -981,7 +981,7 @@ svg.social-icon {
   padding-bottom: 30px;
 }
 
-.contact-form h1 {
+.contact-form :is(h1, .tam-h1) {
   text-align: center;
   color: #1a1a1a;
 }
@@ -1245,7 +1245,7 @@ body {
 /* Ajustes generales para pantallas pequeñas */
 @media (max-width: 768px) {
   /* Ajustes para el Hero Section */
-  .hero-content h1 {
+  .hero-content :is(h1, .tam-h1) {
     font-size: 1.3rem; /* Tamaño más pequeño para h1 en pantallas pequeñas */
     line-height: 1.2; /* Asegura que el texto no se solape */
     margin-bottom: 15px; /* Ajustar el espacio inferior */
@@ -1295,9 +1295,18 @@ body {
 @keyframes p5-color-now { 0%, 24%, 100% { color: #242323; } 12% { color: #ffffff; } }
 @keyframes p5-color-wa { 0%, 24%, 100% { color: #25d366; } 12% { color: #ffffff; } }
 
-.hero-content h1 { animation: p5-pulse 5s ease-in-out infinite; }
+.hero-content :is(h1, .tam-h1) { animation: p5-pulse 5s ease-in-out infinite; }
 .quote-btn { animation: p5-borde-rojo 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
 .now-text { animation: p5-color-now 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
 .whatsapp-link { animation: p5-color-wa 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite, p5-borde-blanco 5s ease-in-out infinite; }
 .tips-btn { animation: p5-borde-gris 5s ease-in-out infinite, p5-grow 5s ease-in-out infinite; }
 .clickable-phone { animation: p5-grow 5s ease-in-out infinite; }
+
+/* Títulos que dejaron de ser H1 (para SEO, la página tiene un solo H1) pero conservan el mismo aspecto.
+   :where() no suma especificidad: cualquier otra regla del sitio manda sobre esta. */
+:where(.tam-h1) {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-block: 0.67em;
+}

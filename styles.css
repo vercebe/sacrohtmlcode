@@ -47,3 +47,12 @@ section {
 #Contactanos {
   scroll-margin-top: 80px;
 }
+
+/* Títulos que dejaron de ser H1 (para SEO, la página tiene un solo H1) pero conservan el mismo aspecto.
+   :where() no suma especificidad: cualquier otra regla del sitio manda sobre esta. */
+:where(.tam-h1) {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin-block: 0.67em;
+}

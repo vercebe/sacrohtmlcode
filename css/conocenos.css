@@ -87,7 +87,7 @@
 }
 
 /* Texto debajo de la foto */
-.photo-section h1,
+.photo-section :is(h1, .tam-h1),
 .photo-section h2 {
   color: #ffffff;
   text-align: center;
@@ -95,7 +95,7 @@
   padding: 0;
 }
 
-.photo-section h1 {
+.photo-section :is(h1, .tam-h1) {
   font-size: 22px;
 }
 

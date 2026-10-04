@@ -77,7 +77,7 @@ input::placeholder {
 }
 
 /* Título del formulario */
-h2 {
+h2:where(:not(.tam-h1)) {
   text-align: center; /* Texto centrado */
   margin-bottom: 20px; /* Espacio inferior de 20px */
   font-weight: bold; /* Texto en negrita */
